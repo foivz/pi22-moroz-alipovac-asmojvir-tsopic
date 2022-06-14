@@ -1,0 +1,17 @@
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\bin\Debug\Projekt_Gost.exe.config
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\bin\Debug\Projekt_Gost.exe
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\bin\Debug\Projekt_Gost.pdb
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.csproj.AssemblyReference.cache
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.csproj.SuggestedBindingRedirects.cache
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.Properties.Resources.resources
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.csproj.GenerateResource.cache
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.csproj.CoreCompileInputs.cache
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.exe
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.pdb
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\bin\Debug\EntityFramework.dll
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\bin\Debug\EntityFramework.xml
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.KreiranjeNarudzbeForm.resources
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.csproj.CopyComplete
+C:\Users\TIN\source\repos\Projekt_Gost\Projekt_Gost\obj\Debug\Projekt_Gost.LoginForm.resources

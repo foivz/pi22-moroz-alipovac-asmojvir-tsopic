@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PI2220_DBModelStoreContainer" CdmEntityContainer="PI2220_DBEntities">
+    <EntitySetMapping Name="Artikls">
+      <EntityTypeMapping TypeName="PI2220_DBModel.Artikl">
+        <MappingFragment StoreEntitySet="Artikl">
+          <ScalarProperty Name="id_artikl" ColumnName="id_artikl" />
+          <ScalarProperty Name="naziv_artikla" ColumnName="naziv_artikla" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="kolicina_u_skladistu" ColumnName="kolicina_u_skladistu" />
+          <ScalarProperty Name="kolicina_u_litrama" ColumnName="kolicina_u_litrama" />
+          <ScalarProperty Name="id_vrste_artikla" ColumnName="id_vrste_artikla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Narudzbas">
+      <EntityTypeMapping TypeName="PI2220_DBModel.Narudzba">
+        <MappingFragment StoreEntitySet="Narudzba">
+          <ScalarProperty Name="id_narudzba" ColumnName="id_narudzba" />
+          <ScalarProperty Name="id_stola" ColumnName="id_stola" />
+          <ScalarProperty Name="datum_i_vrijeme" ColumnName="datum_i_vrijeme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stavka_narudzbe">
+      <EntityTypeMapping TypeName="PI2220_DBModel.stavka_narudzbe">
+        <MappingFragment StoreEntitySet="stavka_narudzbe">
+          <ScalarProperty Name="id_narudzba" ColumnName="id_narudzba" />
+          <ScalarProperty Name="id_artikl" ColumnName="id_artikl" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stols">
+      <EntityTypeMapping TypeName="PI2220_DBModel.Stol">
+        <MappingFragment StoreEntitySet="Stol">
+          <ScalarProperty Name="id_stola" ColumnName="id_stola" />
+          <ScalarProperty Name="broj_stola" ColumnName="broj_stola" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vrsta_artiklas">
+      <EntityTypeMapping TypeName="PI2220_DBModel.Vrsta_artikla">
+        <MappingFragment StoreEntitySet="Vrsta artikla">
+          <ScalarProperty Name="id_vrste_artikla" ColumnName="id_vrste_artikla" />
+          <ScalarProperty Name="naziv_vrste_artikla" ColumnName="naziv_vrste_artikla" />
+          <ScalarProperty Name="stopa_poreza" ColumnName="stopa_poreza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

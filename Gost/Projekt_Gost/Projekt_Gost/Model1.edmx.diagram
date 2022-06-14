@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8fefc308f26f48cf9bdd524c52d4751e" Name="Diagram1">
+        <EntityTypeShape EntityType="PI2220_DBModel.Artikl" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Narudzba" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.stavka_narudzbe" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Stol" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Vrsta_artikla" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Artikl_Vrsta_artikla" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_stavka_narudzbe_Artikl" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Narudzba_Stol" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_stavka_narudzbe_Narudzba" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PI2220_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Artikl">
+    <Key>
+      <PropertyRef Name="id_artikl" />
+    </Key>
+    <Property Name="id_artikl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv_artikla" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="cijena" Type="float" Nullable="false" />
+    <Property Name="kolicina_u_skladistu" Type="int" Nullable="false" />
+    <Property Name="kolicina_u_litrama" Type="float" Nullable="false" />
+    <Property Name="id_vrste_artikla" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Narudzba">
+    <Key>
+      <PropertyRef Name="id_narudzba" />
+    </Key>
+    <Property Name="id_narudzba" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_stola" Type="int" Nullable="false" />
+    <Property Name="datum_i_vrijeme" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stavka_narudzbe">
+    <Key>
+      <PropertyRef Name="id_narudzba" />
+      <PropertyRef Name="id_artikl" />
+    </Key>
+    <Property Name="id_narudzba" Type="int" Nullable="false" />
+    <Property Name="id_artikl" Type="int" Nullable="false" />
+    <Property Name="kolicina" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stol">
+    <Key>
+      <PropertyRef Name="id_stola" />
+    </Key>
+    <Property Name="id_stola" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="broj_stola" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vrsta artikla">
+    <Key>
+      <PropertyRef Name="id_vrste_artikla" />
+    </Key>
+    <Property Name="id_vrste_artikla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv_vrste_artikla" Type="varchar" MaxLength="65" Nullable="false" />
+    <Property Name="stopa_poreza" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Artikl_Vrsta artikla">
+    <End Role="Vrsta artikla" Type="Self.Vrsta artikla" Multiplicity="1" />
+    <End Role="Artikl" Type="Self.Artikl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vrsta artikla">
+        <PropertyRef Name="id_vrste_artikla" />
+      </Principal>
+      <Dependent Role="Artikl">
+        <PropertyRef Name="id_vrste_artikla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Narudzba_Stol">
+    <End Role="Stol" Type="Self.Stol" Multiplicity="1" />
+    <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stol">
+        <PropertyRef Name="id_stola" />
+      </Principal>
+      <Dependent Role="Narudzba">
+        <PropertyRef Name="id_stola" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavka_narudzbe_Artikl">
+    <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+    <End Role="stavka_narudzbe" Type="Self.stavka_narudzbe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artikl">
+        <PropertyRef Name="id_artikl" />
+      </Principal>
+      <Dependent Role="stavka_narudzbe">
+        <PropertyRef Name="id_artikl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavka_narudzbe_Narudzba">
+    <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="1" />
+    <End Role="stavka_narudzbe" Type="Self.stavka_narudzbe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Narudzba">
+        <PropertyRef Name="id_narudzba" />
+      </Principal>
+      <Dependent Role="stavka_narudzbe">
+        <PropertyRef Name="id_narudzba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PI2220_DBModelStoreContainer">
+    <EntitySet Name="Artikl" EntityType="Self.Artikl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Narudzba" EntityType="Self.Narudzba" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stavka_narudzbe" EntityType="Self.stavka_narudzbe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stol" EntityType="Self.Stol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vrsta artikla" EntityType="Self.Vrsta artikla" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Artikl_Vrsta artikla" Association="Self.FK_Artikl_Vrsta artikla">
+      <End Role="Vrsta artikla" EntitySet="Vrsta artikla" />
+      <End Role="Artikl" EntitySet="Artikl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Narudzba_Stol" Association="Self.FK_Narudzba_Stol">
+      <End Role="Stol" EntitySet="Stol" />
+      <End Role="Narudzba" EntitySet="Narudzba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavka_narudzbe_Artikl" Association="Self.FK_stavka_narudzbe_Artikl">
+      <End Role="Artikl" EntitySet="Artikl" />
+      <End Role="stavka_narudzbe" EntitySet="stavka_narudzbe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavka_narudzbe_Narudzba" Association="Self.FK_stavka_narudzbe_Narudzba">
+      <End Role="Narudzba" EntitySet="Narudzba" />
+      <End Role="stavka_narudzbe" EntitySet="stavka_narudzbe" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
