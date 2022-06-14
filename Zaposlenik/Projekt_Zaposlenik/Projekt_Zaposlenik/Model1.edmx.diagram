@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8610a9dd7a6d4d5d9634f92850156d0b" Name="Diagram1">
+        <EntityTypeShape EntityType="PI2220_DBModel.Artikl" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Korisnik" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Narudzba" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Racun" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.stavka_narudzbe" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Stol" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Uloga" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Vrsta_artikla" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Artikl_Vrsta_artikla" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_stavka_narudzbe_Artikl" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Korisnik_Uloga" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Racun_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Narudzba_Stol" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Racun_Narudzba" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2220_DBModel.FK_stavka_narudzbe_Narudzba" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Status_narudzbe" Width="1.5" PointX="0.75" PointY="1.125" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Narudzba_Status_narudzbe" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

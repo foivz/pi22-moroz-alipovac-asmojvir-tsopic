@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PI2220_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Artikl">
+    <Key>
+      <PropertyRef Name="id_artikl" />
+    </Key>
+    <Property Name="id_artikl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_artikla" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cijena" Type="Double" Nullable="false" />
+    <Property Name="kolicina_u_skladistu" Type="Int32" Nullable="false" />
+    <Property Name="kolicina_u_litrama" Type="Double" Nullable="false" />
+    <Property Name="id_vrste_artikla" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Vrsta_artikla" Relationship="Self.FK_Artikl_Vrsta_artikla" FromRole="Artikl" ToRole="Vrsta_artikla" />
+    <NavigationProperty Name="stavka_narudzbe" Relationship="Self.FK_stavka_narudzbe_Artikl" FromRole="Artikl" ToRole="stavka_narudzbe" />
+  </EntityType>
+  <EntityType Name="Korisnik">
+    <Key>
+      <PropertyRef Name="id_korisnik" />
+    </Key>
+    <Property Name="id_korisnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="prezime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="datum_rodenja" Type="DateTime" Precision="0" />
+    <Property Name="adresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="OIB" Type="Int32" />
+    <Property Name="korisnicko_ime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="lozinka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="id_uloga" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Uloga" Relationship="Self.FK_Korisnik_Uloga" FromRole="Korisnik" ToRole="Uloga" />
+    <NavigationProperty Name="Racuns" Relationship="Self.FK_Racun_Korisnik" FromRole="Korisnik" ToRole="Racun" />
+  </EntityType>
+  <EntityType Name="Narudzba">
+    <Key>
+      <PropertyRef Name="id_narudzba" />
+    </Key>
+    <Property Name="id_narudzba" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_stola" Type="Int32" Nullable="false" />
+    <Property Name="datum_i_vrijeme" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Stol" Relationship="Self.FK_Narudzba_Stol" FromRole="Narudzba" ToRole="Stol" />
+    <NavigationProperty Name="Racuns" Relationship="Self.FK_Racun_Narudzba" FromRole="Narudzba" ToRole="Racun" />
+    <NavigationProperty Name="stavka_narudzbe" Relationship="Self.FK_stavka_narudzbe_Narudzba" FromRole="Narudzba" ToRole="stavka_narudzbe" />
+    <Property Name="id_statusa_narudzbe" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Status_narudzbe" Relationship="PI2220_DBModel.FK_Narudzba_Status_narudzbe" FromRole="Narudzba" ToRole="Status_narudzbe" />
+  </EntityType>
+  <EntityType Name="Racun">
+    <Key>
+      <PropertyRef Name="id_racun" />
+    </Key>
+    <Property Name="id_racun" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_korisnik" Type="Int32" Nullable="false" />
+    <Property Name="id_narudzba" Type="Int32" Nullable="false" />
+    <Property Name="datum_i_vrijeme" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Korisnik" Relationship="Self.FK_Racun_Korisnik" FromRole="Racun" ToRole="Korisnik" />
+    <NavigationProperty Name="Narudzba" Relationship="Self.FK_Racun_Narudzba" FromRole="Racun" ToRole="Narudzba" />
+  </EntityType>
+  <EntityType Name="stavka_narudzbe">
+    <Key>
+      <PropertyRef Name="id_narudzba" />
+      <PropertyRef Name="id_artikl" />
+    </Key>
+    <Property Name="id_narudzba" Type="Int32" Nullable="false" />
+    <Property Name="id_artikl" Type="Int32" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Artikl" Relationship="Self.FK_stavka_narudzbe_Artikl" FromRole="stavka_narudzbe" ToRole="Artikl" />
+    <NavigationProperty Name="Narudzba" Relationship="Self.FK_stavka_narudzbe_Narudzba" FromRole="stavka_narudzbe" ToRole="Narudzba" />
+  </EntityType>
+  <EntityType Name="Stol">
+    <Key>
+      <PropertyRef Name="id_stola" />
+    </Key>
+    <Property Name="id_stola" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="broj_stola" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Narudzbas" Relationship="Self.FK_Narudzba_Stol" FromRole="Stol" ToRole="Narudzba" />
+  </EntityType>
+  <EntityType Name="Uloga">
+    <Key>
+      <PropertyRef Name="id_uloga" />
+    </Key>
+    <Property Name="id_uloga" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_uloge" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Korisniks" Relationship="Self.FK_Korisnik_Uloga" FromRole="Uloga" ToRole="Korisnik" />
+  </EntityType>
+  <EntityType Name="Vrsta_artikla">
+    <Key>
+      <PropertyRef Name="id_vrste_artikla" />
+    </Key>
+    <Property Name="id_vrste_artikla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_vrste_artikla" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stopa_poreza" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Artikls" Relationship="Self.FK_Artikl_Vrsta_artikla" FromRole="Vrsta_artikla" ToRole="Artikl" />
+  </EntityType>
+  <Association Name="FK_Artikl_Vrsta_artikla">
+    <End Role="Vrsta_artikla" Type="Self.Vrsta_artikla" Multiplicity="1" />
+    <End Role="Artikl" Type="Self.Artikl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vrsta_artikla">
+        <PropertyRef Name="id_vrste_artikla" />
+      </Principal>
+      <Dependent Role="Artikl">
+        <PropertyRef Name="id_vrste_artikla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavka_narudzbe_Artikl">
+    <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+    <End Role="stavka_narudzbe" Type="Self.stavka_narudzbe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artikl">
+        <PropertyRef Name="id_artikl" />
+      </Principal>
+      <Dependent Role="stavka_narudzbe">
+        <PropertyRef Name="id_artikl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_Uloga">
+    <End Role="Uloga" Type="Self.Uloga" Multiplicity="1" />
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uloga">
+        <PropertyRef Name="id_uloga" />
+      </Principal>
+      <Dependent Role="Korisnik">
+        <PropertyRef Name="id_uloga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Racun_Korisnik">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="id_korisnik" />
+      </Principal>
+      <Dependent Role="Racun">
+        <PropertyRef Name="id_korisnik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Narudzba_Stol">
+    <End Role="Stol" Type="Self.Stol" Multiplicity="1" />
+    <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stol">
+        <PropertyRef Name="id_stola" />
+      </Principal>
+      <Dependent Role="Narudzba">
+        <PropertyRef Name="id_stola" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Racun_Narudzba">
+    <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="1" />
+    <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Narudzba">
+        <PropertyRef Name="id_narudzba" />
+      </Principal>
+      <Dependent Role="Racun">
+        <PropertyRef Name="id_narudzba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavka_narudzbe_Narudzba">
+    <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="1" />
+    <End Role="stavka_narudzbe" Type="Self.stavka_narudzbe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Narudzba">
+        <PropertyRef Name="id_narudzba" />
+      </Principal>
+      <Dependent Role="stavka_narudzbe">
+        <PropertyRef Name="id_narudzba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PI2220_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Artikls" EntityType="Self.Artikl" />
+    <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+    <EntitySet Name="Narudzbas" EntityType="Self.Narudzba" />
+    <EntitySet Name="Racuns" EntityType="Self.Racun" />
+    <EntitySet Name="stavka_narudzbe" EntityType="Self.stavka_narudzbe" />
+    <EntitySet Name="Stols" EntityType="Self.Stol" />
+    <EntitySet Name="Ulogas" EntityType="Self.Uloga" />
+    <EntitySet Name="Vrsta_artiklas" EntityType="Self.Vrsta_artikla" />
+    <AssociationSet Name="FK_Artikl_Vrsta_artikla" Association="Self.FK_Artikl_Vrsta_artikla">
+      <End Role="Vrsta_artikla" EntitySet="Vrsta_artiklas" />
+      <End Role="Artikl" EntitySet="Artikls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavka_narudzbe_Artikl" Association="Self.FK_stavka_narudzbe_Artikl">
+      <End Role="Artikl" EntitySet="Artikls" />
+      <End Role="stavka_narudzbe" EntitySet="stavka_narudzbe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_Uloga" Association="Self.FK_Korisnik_Uloga">
+      <End Role="Uloga" EntitySet="Ulogas" />
+      <End Role="Korisnik" EntitySet="Korisniks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Racun_Korisnik" Association="Self.FK_Racun_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Racun" EntitySet="Racuns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Narudzba_Stol" Association="Self.FK_Narudzba_Stol">
+      <End Role="Stol" EntitySet="Stols" />
+      <End Role="Narudzba" EntitySet="Narudzbas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Racun_Narudzba" Association="Self.FK_Racun_Narudzba">
+      <End Role="Narudzba" EntitySet="Narudzbas" />
+      <End Role="Racun" EntitySet="Racuns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavka_narudzbe_Narudzba" Association="Self.FK_stavka_narudzbe_Narudzba">
+      <End Role="Narudzba" EntitySet="Narudzbas" />
+      <End Role="stavka_narudzbe" EntitySet="stavka_narudzbe" />
+    </AssociationSet>
+    <EntitySet Name="Status_narudzbes" EntityType="PI2220_DBModel.Status_narudzbe" />
+    <AssociationSet Name="FK_Narudzba_Status_narudzbe" Association="PI2220_DBModel.FK_Narudzba_Status_narudzbe">
+      <End Role="Status_narudzbe" EntitySet="Status_narudzbes" />
+      <End Role="Narudzba" EntitySet="Narudzbas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Status_narudzbe">
+    <Key>
+      <PropertyRef Name="id_status_narudzbe" />
+    </Key>
+    <Property Name="id_status_narudzbe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_statusa_narudzbe" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Narudzbas" Relationship="PI2220_DBModel.FK_Narudzba_Status_narudzbe" FromRole="Status_narudzbe" ToRole="Narudzba" />
+  </EntityType>
+  <Association Name="FK_Narudzba_Status_narudzbe">
+    <End Type="PI2220_DBModel.Status_narudzbe" Role="Status_narudzbe" Multiplicity="1" />
+    <End Type="PI2220_DBModel.Narudzba" Role="Narudzba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_narudzbe">
+        <PropertyRef Name="id_status_narudzbe" />
+      </Principal>
+      <Dependent Role="Narudzba">
+        <PropertyRef Name="id_statusa_narudzbe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
