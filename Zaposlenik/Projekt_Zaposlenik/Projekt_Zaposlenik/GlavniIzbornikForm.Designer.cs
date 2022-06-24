@@ -66,6 +66,7 @@
             this.buttonPopisPica.TabIndex = 2;
             this.buttonPopisPica.Text = "Popis pića";
             this.buttonPopisPica.UseVisualStyleBackColor = true;
+            this.buttonPopisPica.Click += new System.EventHandler(this.buttonPopisPica_Click);
             // 
             // buttonSkladiste
             // 
@@ -84,6 +85,7 @@
             this.buttonStatistika.TabIndex = 4;
             this.buttonStatistika.Text = "Statistika";
             this.buttonStatistika.UseVisualStyleBackColor = true;
+            this.buttonStatistika.Click += new System.EventHandler(this.buttonStatistika_Click);
             // 
             // buttonProfili
             // 

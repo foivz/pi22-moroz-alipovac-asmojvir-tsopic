@@ -56,5 +56,10 @@ namespace Projekt_Zaposlenik
 
             }
         }
+
+        private void LogInForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -26,5 +26,17 @@ namespace Projekt_Zaposlenik
             
 
         }
+
+        private void buttonPopisPica_Click(object sender, EventArgs e)
+        {
+            PopisPicaForm form = new PopisPicaForm();
+            form.ShowDialog();
+        }
+
+        private void buttonStatistika_Click(object sender, EventArgs e)
+        {
+            StatistikaForm form = new StatistikaForm();
+            form.ShowDialog();
+        }
     }
 }
