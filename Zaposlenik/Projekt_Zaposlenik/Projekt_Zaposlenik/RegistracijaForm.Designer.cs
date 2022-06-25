@@ -47,6 +47,7 @@
             this.cmbDodao = new System.Windows.Forms.ComboBox();
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnObrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,9 +137,9 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(983, 345);
+            this.btnDodaj.Location = new System.Drawing.Point(983, 363);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(143, 62);
+            this.btnDodaj.Size = new System.Drawing.Size(143, 37);
             this.btnDodaj.TabIndex = 9;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -146,9 +147,9 @@
             // 
             // btnOdobri
             // 
-            this.btnOdobri.Location = new System.Drawing.Point(983, 431);
+            this.btnOdobri.Location = new System.Drawing.Point(983, 403);
             this.btnOdobri.Name = "btnOdobri";
-            this.btnOdobri.Size = new System.Drawing.Size(143, 62);
+            this.btnOdobri.Size = new System.Drawing.Size(143, 38);
             this.btnOdobri.TabIndex = 10;
             this.btnOdobri.Text = "Odobri";
             this.btnOdobri.UseVisualStyleBackColor = true;
@@ -214,12 +215,23 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Opis:";
             // 
+            // btnObrisi
+            // 
+            this.btnObrisi.Location = new System.Drawing.Point(983, 447);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(143, 38);
+            this.btnObrisi.TabIndex = 20;
+            this.btnObrisi.Text = "Obriši";
+            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
+            // 
             // RegistracijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1156, 523);
+            this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.cmbDodao);
@@ -269,5 +281,6 @@
         private System.Windows.Forms.ComboBox cmbDodao;
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnObrisi;
     }
 }

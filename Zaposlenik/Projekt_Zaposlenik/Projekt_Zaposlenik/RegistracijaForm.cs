@@ -171,6 +171,34 @@ namespace Projekt_Zaposlenik
                 MessageBox.Show("Rezervacija već odobrena");
             }
         }
-       
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            string poruka = "Jeste li sigurni da želite obrisati odabranu rezervaciju?";
+            string naslov = "Obriši rezervaciju";
+            MessageBoxButtons tipke = MessageBoxButtons.YesNo;
+            DialogResult rezultat = MessageBox.Show(poruka, naslov, tipke);
+            if (rezultat == DialogResult.Yes)
+            {
+                RegistracijaView odabranaRezervacija = dgvRegistracija.CurrentRow.DataBoundItem as RegistracijaView;
+                List<Rezervacija> rezervacije = new List<Rezervacija>();
+                rezervacije = DohvatiRezervacije();
+                Rezervacija novaRezervacija = new Rezervacija();
+                using (var context = new PI2220_DBEntities())
+                {
+                    foreach (Rezervacija rezervacija in rezervacije)
+                    {
+                        if (rezervacija.id_rezervacije == odabranaRezervacija.Id_rezervacije)
+                        {
+                            novaRezervacija = rezervacija;
+                        }
+                    }
+                    context.Rezervacijas.Attach(novaRezervacija);
+                    context.Rezervacijas.Remove(novaRezervacija);
+                    context.SaveChanges();
+                }
+                Osjvezi();
+            }
+        }
     }
 }
