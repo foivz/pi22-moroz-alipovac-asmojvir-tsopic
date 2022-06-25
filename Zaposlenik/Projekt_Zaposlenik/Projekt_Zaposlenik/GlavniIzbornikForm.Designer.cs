@@ -96,6 +96,7 @@
             this.buttonProfili.TabIndex = 5;
             this.buttonProfili.Text = "Profili";
             this.buttonProfili.UseVisualStyleBackColor = true;
+            this.buttonProfili.Click += new System.EventHandler(this.buttonProfili_Click);
             // 
             // buttonRaspored
             // 

@@ -50,5 +50,11 @@ namespace Projekt_Zaposlenik
             RasporedForma form = new RasporedForma();
             form.ShowDialog();
         }
+
+        private void buttonProfili_Click(object sender, EventArgs e)
+        {
+            ZaposleniciForm form = new ZaposleniciForm();
+            form.ShowDialog();
+        }
     }
 }
