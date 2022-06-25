@@ -24,23 +24,34 @@ namespace Projekt_Zaposlenik
 
         private void RegistracijaForm_Load(object sender, EventArgs e)
         {
-            Osvjezi();
+            DohvatiRegistracije();
         }
 
-        private void Osvjezi()
-        {
-            dgvRegistracija.DataSource = DohvatiRegistracije();
-            dgvRegistracija.Columns["id_rezervacije"].Visible = false;
-            dgvRegistracija.Columns["Korisnik1"].Visible = false;
-            dgvRegistracija.Columns["Korisnik"].Visible = false;
-        }
+       
 
-        private object DohvatiRegistracije()
+        private void DohvatiRegistracije()
         {
             using (var context = new PI2220_DBEntities())
             {
-                return context.Rezervacijas.ToList();
+                var query = from r in context.Rezervacijas.Include("Korisnik").Include("Korisnik1")
+                            select new RegistracijaView
+                            {
+                                Id_rezervacije= r.id_rezervacije,
+                                Gost = r.ime +" "+ r.prezime,
+                                Email = r.email_gosta,
+                                Telefon = r.tel_gosta,
+                                DatumRezervacije = r.datum_rezervacije,
+                                DatumDogadaja = r.datum_dogadaja,
+                                Dodao = r.Korisnik.ime + " " + r.Korisnik.prezime,
+                                Odobreno = r.odobrena
+                            };
+                dgvRegistracija.DataSource = query.ToList();
             }
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

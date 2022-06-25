@@ -74,6 +74,7 @@
     <Compile Include="DodajPiceForm.Designer.cs">
       <DependentUpon>DodajPiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Korisnik.code.cs" />
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +137,7 @@
     <Compile Include="RegistracijaForm.Designer.cs">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistracijaView.cs" />
     <Compile Include="Rezervacija.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
