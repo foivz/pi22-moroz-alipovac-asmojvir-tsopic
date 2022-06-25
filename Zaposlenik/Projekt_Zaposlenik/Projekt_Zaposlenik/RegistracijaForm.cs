@@ -24,8 +24,24 @@ namespace Projekt_Zaposlenik
 
         private void RegistracijaForm_Load(object sender, EventArgs e)
         {
+            Osjvezi();
+        }
+
+        private void Osjvezi()
+        {
             DohvatiRegistracije();
             DohvatiKorisnike();
+            foreach (DataGridViewRow row in dgvRegistracija.Rows)
+            {
+                if (row.Cells[7].Value.ToString() == "0")
+                {
+                    row.Cells[7].Style.BackColor = Color.Red;
+                }
+                else
+                {
+                    row.Cells[7].Style.BackColor = Color.Green;
+                }
+            }
         }
 
         private void DohvatiKorisnike()
@@ -130,14 +146,16 @@ namespace Projekt_Zaposlenik
             txtTelefon.Text = "";
             txtOpis.Text = "";
             datePickDatum.Value = DateTime.Now;
-            DohvatiRegistracije();
+            Osjvezi();
         }
 
         private void btnOdobri_Click(object sender, EventArgs e)
         {
-
-
-
+            RegistracijaView odabranaRezervacija = dgvRegistracija.CurrentRow.DataBoundItem as RegistracijaView;
+            Provjera provjera = new Provjera(odabranaRezervacija);
+            provjera.ShowDialog();
+            Osjvezi();
         }
+       
     }
 }
