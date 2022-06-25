@@ -105,6 +105,7 @@
             this.buttonRaspored.TabIndex = 6;
             this.buttonRaspored.Text = "Raspored";
             this.buttonRaspored.UseVisualStyleBackColor = true;
+            this.buttonRaspored.Click += new System.EventHandler(this.buttonRaspored_Click);
             // 
             // label1
             // 

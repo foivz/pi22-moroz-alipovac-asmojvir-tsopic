@@ -44,5 +44,11 @@ namespace Projekt_Zaposlenik
             RegistracijaForm form = new RegistracijaForm();
             form.ShowDialog();
         }
+
+        private void buttonRaspored_Click(object sender, EventArgs e)
+        {
+            RasporedForma form = new RasporedForma();
+            form.ShowDialog();
+        }
     }
 }

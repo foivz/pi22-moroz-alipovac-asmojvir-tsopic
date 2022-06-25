@@ -68,11 +68,23 @@
     <Compile Include="AzurirajArtiklForm.Designer.cs">
       <DependentUpon>AzurirajArtiklForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AzurirajRasporedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AzurirajRasporedForm.Designer.cs">
+      <DependentUpon>AzurirajRasporedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajPiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DodajPiceForm.Designer.cs">
       <DependentUpon>DodajPiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajRasporedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajRasporedForm.Designer.cs">
+      <DependentUpon>DodajRasporedForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Korisnik.code.cs" />
     <Compile Include="LogInForm.cs">
@@ -140,6 +152,12 @@
     <Compile Include="Raspored.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RasporedForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RasporedForma.Designer.cs">
+      <DependentUpon>RasporedForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistracijaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +168,7 @@
     <Compile Include="Rezervacija.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RasporedIspis.cs" />
     <Compile Include="StatistikaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +184,7 @@
     <Compile Include="Stol.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TipSmjene.code.cs" />
     <Compile Include="TipSmjene.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -177,8 +197,14 @@
     <EmbeddedResource Include="AzurirajArtiklForm.resx">
       <DependentUpon>AzurirajArtiklForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AzurirajRasporedForm.resx">
+      <DependentUpon>AzurirajRasporedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DodajPiceForm.resx">
       <DependentUpon>DodajPiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajRasporedForm.resx">
+      <DependentUpon>DodajRasporedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
@@ -207,6 +233,9 @@
     </Compile>
     <EmbeddedResource Include="Provjera.resx">
       <DependentUpon>Provjera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RasporedForma.resx">
+      <DependentUpon>RasporedForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistracijaForm.resx">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
