@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvZaposlenici = new System.Windows.Forms.DataGridView();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.btnAzuriraj = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,13 +47,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Zaposlenici";
             // 
-            // dataGridView1
+            // dgvZaposlenici
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 98);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 236);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvZaposlenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvZaposlenici.Location = new System.Drawing.Point(12, 98);
+            this.dgvZaposlenici.Name = "dgvZaposlenici";
+            this.dgvZaposlenici.Size = new System.Drawing.Size(776, 236);
+            this.dgvZaposlenici.TabIndex = 1;
             // 
             // btnObrisi
             // 
@@ -91,12 +91,12 @@
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnAzuriraj);
             this.Controls.Add(this.btnObrisi);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvZaposlenici);
             this.Controls.Add(this.label1);
             this.Name = "ZaposleniciForm";
             this.Text = "Zaposlenici";
             this.Load += new System.EventHandler(this.ZaposleniciForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,7 +105,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvZaposlenici;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnAzuriraj;
         private System.Windows.Forms.Button btnDodaj;

@@ -194,6 +194,7 @@
     <Compile Include="Vrsta_artikla.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ZaposleniciView.cs" />
     <Compile Include="Zaposlenik.cs">
       <SubType>Form</SubType>
     </Compile>
