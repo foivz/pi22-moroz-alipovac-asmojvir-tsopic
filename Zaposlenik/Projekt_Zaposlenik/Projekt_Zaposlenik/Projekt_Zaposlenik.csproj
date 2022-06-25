@@ -136,6 +136,9 @@
     <Compile Include="RegistracijaForm.Designer.cs">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rezervacija.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="StatistikaForm.cs">
       <SubType>Form</SubType>
     </Compile>

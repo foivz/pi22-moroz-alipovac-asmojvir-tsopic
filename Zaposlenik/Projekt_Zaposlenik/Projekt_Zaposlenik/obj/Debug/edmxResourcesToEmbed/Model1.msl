@@ -90,5 +90,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Rezervacijas">
+      <EntityTypeMapping TypeName="PI2220_DBModel.Rezervacija">
+        <MappingFragment StoreEntitySet="Rezervacija">
+          <ScalarProperty Name="opis_dogadaja" ColumnName="opis_dogadaja" />
+          <ScalarProperty Name="datum_dogadaja" ColumnName="datum_dogadaja" />
+          <ScalarProperty Name="id_odobrio" ColumnName="id_odobrio" />
+          <ScalarProperty Name="id_dodao" ColumnName="id_dodao" />
+          <ScalarProperty Name="odobrena" ColumnName="odobrena" />
+          <ScalarProperty Name="datum_rezervacije" ColumnName="datum_rezervacije" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="tel_gosta" ColumnName="tel_gosta" />
+          <ScalarProperty Name="email_gosta" ColumnName="email_gosta" />
+          <ScalarProperty Name="id_rezervacije" ColumnName="id_rezervacije" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

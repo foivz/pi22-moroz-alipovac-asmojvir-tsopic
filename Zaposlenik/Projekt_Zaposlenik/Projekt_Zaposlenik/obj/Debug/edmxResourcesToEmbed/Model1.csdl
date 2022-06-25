@@ -28,6 +28,8 @@
     <Property Name="id_uloga" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Uloga" Relationship="Self.FK_Korisnik_Uloga" FromRole="Korisnik" ToRole="Uloga" />
     <NavigationProperty Name="Racuns" Relationship="Self.FK_Racun_Korisnik" FromRole="Korisnik" ToRole="Racun" />
+    <NavigationProperty Name="Rezervacijas" Relationship="PI2220_DBModel.FK_Rezervacija_id_dodao" FromRole="Korisnik" ToRole="Rezervacija" />
+    <NavigationProperty Name="Rezervacijas1" Relationship="PI2220_DBModel.FK_Rezervacija_id_odobrio" FromRole="Korisnik" ToRole="Rezervacija" />
   </EntityType>
   <EntityType Name="Narudzba">
     <Key>
@@ -49,7 +51,7 @@
     <Property Name="id_racun" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="id_korisnik" Type="Int32" Nullable="false" />
     <Property Name="id_narudzba" Type="Int32" Nullable="false" />
-    <Property Name="datum_i_vrijeme" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="datum_i_vrijeme" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Korisnik" Relationship="Self.FK_Racun_Korisnik" FromRole="Racun" ToRole="Korisnik" />
     <NavigationProperty Name="Narudzba" Relationship="Self.FK_Racun_Narudzba" FromRole="Racun" ToRole="Narudzba" />
   </EntityType>
@@ -215,6 +217,15 @@
       <End Role="Status_narudzbe" EntitySet="Status_narudzbes" />
       <End Role="Narudzba" EntitySet="Narudzbas" />
     </AssociationSet>
+    <EntitySet Name="Rezervacijas" EntityType="PI2220_DBModel.Rezervacija" />
+    <AssociationSet Name="FK_Rezervacija_id_dodao" Association="PI2220_DBModel.FK_Rezervacija_id_dodao">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Rezervacija" EntitySet="Rezervacijas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervacija_id_odobrio" Association="PI2220_DBModel.FK_Rezervacija_id_odobrio">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Rezervacija" EntitySet="Rezervacijas" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Status_narudzbe">
     <Key>
@@ -233,6 +244,48 @@
       </Principal>
       <Dependent Role="Narudzba">
         <PropertyRef Name="id_statusa_narudzbe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Rezervacija">
+    <Key>
+      <PropertyRef Name="id_rezervacije" />
+    </Key>
+    <Property Name="id_rezervacije" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email_gosta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tel_gosta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="datum_rezervacije" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="odobrena" Type="Byte" Nullable="false" />
+    <Property Name="id_dodao" Type="Int32" Nullable="false" />
+    <Property Name="id_odobrio" Type="Int32" Nullable="false" />
+    <Property Name="datum_dogadaja" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="opis_dogadaja" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Korisnik" Relationship="PI2220_DBModel.FK_Rezervacija_id_dodao" FromRole="Rezervacija" ToRole="Korisnik" />
+    <NavigationProperty Name="Korisnik1" Relationship="PI2220_DBModel.FK_Rezervacija_id_odobrio" FromRole="Rezervacija" ToRole="Korisnik" />
+  </EntityType>
+  <Association Name="FK_Rezervacija_id_dodao">
+    <End Type="PI2220_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
+    <End Type="PI2220_DBModel.Rezervacija" Role="Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="id_korisnik" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="id_dodao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervacija_id_odobrio">
+    <End Type="PI2220_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
+    <End Type="PI2220_DBModel.Rezervacija" Role="Rezervacija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="id_korisnik" />
+      </Principal>
+      <Dependent Role="Rezervacija">
+        <PropertyRef Name="id_odobrio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

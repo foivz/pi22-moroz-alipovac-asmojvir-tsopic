@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRegistracija = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,16 +45,17 @@
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.datePickDatum = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvRegistracija
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 220);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvRegistracija.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistracija.Location = new System.Drawing.Point(12, 93);
+            this.dgvRegistracija.Name = "dgvRegistracija";
+            this.dgvRegistracija.Size = new System.Drawing.Size(776, 220);
+            this.dgvRegistracija.TabIndex = 0;
+            this.dgvRegistracija.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistracija_CellContentClick);
             // 
             // label1
             // 
@@ -213,10 +214,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvRegistracija);
             this.Name = "RegistracijaForm";
             this.Text = "RegistracijaForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.RegistracijaForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,7 +226,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRegistracija;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
