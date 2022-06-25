@@ -57,6 +57,7 @@
             this.buttonRezervacije.TabIndex = 1;
             this.buttonRezervacije.Text = "Rezervacije";
             this.buttonRezervacije.UseVisualStyleBackColor = true;
+            this.buttonRezervacije.Click += new System.EventHandler(this.buttonRezervacije_Click);
             // 
             // buttonPopisPica
             // 

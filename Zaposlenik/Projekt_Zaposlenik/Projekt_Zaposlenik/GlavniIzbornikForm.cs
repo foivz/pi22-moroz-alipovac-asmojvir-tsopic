@@ -38,5 +38,11 @@ namespace Projekt_Zaposlenik
             StatistikaForm form = new StatistikaForm();
             form.ShowDialog();
         }
+
+        private void buttonRezervacije_Click(object sender, EventArgs e)
+        {
+            RegistracijaForm form = new RegistracijaForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -130,6 +130,12 @@
     <Compile Include="Racun.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RegistracijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistracijaForm.Designer.cs">
+      <DependentUpon>RegistracijaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StatistikaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistracijaForm.resx">
+      <DependentUpon>RegistracijaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatistikaForm.resx">
       <DependentUpon>StatistikaForm.cs</DependentUpon>
     </EmbeddedResource>
