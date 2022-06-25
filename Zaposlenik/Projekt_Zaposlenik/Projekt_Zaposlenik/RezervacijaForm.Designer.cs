@@ -1,6 +1,6 @@
 ﻿namespace Projekt_Zaposlenik
 {
-    partial class RegistracijaForm
+    partial class RezervacijaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,9 +44,7 @@
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.datePickDatum = new System.Windows.Forms.DateTimePicker();
-            this.cmbDodao = new System.Windows.Forms.ComboBox();
-            this.txtOpis = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.cmbKorisnik = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +53,7 @@
             this.dgvRegistracija.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistracija.Location = new System.Drawing.Point(12, 93);
             this.dgvRegistracija.Name = "dgvRegistracija";
-            this.dgvRegistracija.Size = new System.Drawing.Size(1114, 220);
+            this.dgvRegistracija.Size = new System.Drawing.Size(776, 220);
             this.dgvRegistracija.TabIndex = 0;
             this.dgvRegistracija.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistracija_CellContentClick);
             // 
@@ -64,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(507, 43);
+            this.label1.Location = new System.Drawing.Point(328, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 29);
             this.label1.TabIndex = 1;
@@ -136,7 +134,7 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(983, 345);
+            this.btnDodaj.Location = new System.Drawing.Point(614, 357);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(143, 62);
             this.btnDodaj.TabIndex = 9;
@@ -146,7 +144,7 @@
             // 
             // btnOdobri
             // 
-            this.btnOdobri.Location = new System.Drawing.Point(983, 431);
+            this.btnOdobri.Location = new System.Drawing.Point(614, 443);
             this.btnOdobri.Name = "btnOdobri";
             this.btnOdobri.Size = new System.Drawing.Size(143, 62);
             this.btnOdobri.TabIndex = 10;
@@ -188,40 +186,21 @@
             this.datePickDatum.Size = new System.Drawing.Size(200, 20);
             this.datePickDatum.TabIndex = 16;
             // 
-            // cmbDodao
+            // cmbKorisnik
             // 
-            this.cmbDodao.FormattingEnabled = true;
-            this.cmbDodao.Location = new System.Drawing.Point(333, 464);
-            this.cmbDodao.Name = "cmbDodao";
-            this.cmbDodao.Size = new System.Drawing.Size(200, 21);
-            this.cmbDodao.TabIndex = 17;
+            this.cmbKorisnik.FormattingEnabled = true;
+            this.cmbKorisnik.Location = new System.Drawing.Point(333, 464);
+            this.cmbKorisnik.Name = "cmbKorisnik";
+            this.cmbKorisnik.Size = new System.Drawing.Size(200, 21);
+            this.cmbKorisnik.TabIndex = 17;
             // 
-            // txtOpis
-            // 
-            this.txtOpis.Location = new System.Drawing.Point(598, 407);
-            this.txtOpis.Multiline = true;
-            this.txtOpis.Name = "txtOpis";
-            this.txtOpis.Size = new System.Drawing.Size(287, 78);
-            this.txtOpis.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(595, 387);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Opis:";
-            // 
-            // RegistracijaForm
+            // RezervacijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1156, 523);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtOpis);
-            this.Controls.Add(this.cmbDodao);
+            this.ClientSize = new System.Drawing.Size(800, 523);
+            this.Controls.Add(this.cmbKorisnik);
             this.Controls.Add(this.datePickDatum);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtIme);
@@ -238,8 +217,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvRegistracija);
-            this.Name = "RegistracijaForm";
-            this.Text = "RegistracijaForm";
+            this.Name = "RezervacijaForm";
+            this.Text = "RezervacijaForm";
             this.Load += new System.EventHandler(this.RegistracijaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).EndInit();
             this.ResumeLayout(false);
@@ -265,8 +244,6 @@
         private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DateTimePicker datePickDatum;
-        private System.Windows.Forms.ComboBox cmbDodao;
-        private System.Windows.Forms.TextBox txtOpis;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbKorisnik;
     }
 }

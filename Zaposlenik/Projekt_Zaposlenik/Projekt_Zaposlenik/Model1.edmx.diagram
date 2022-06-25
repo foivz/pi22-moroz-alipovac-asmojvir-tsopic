@@ -22,9 +22,12 @@
         <AssociationConnector Association="PI2220_DBModel.FK_stavka_narudzbe_Narudzba" ManuallyRouted="false" />
         <EntityTypeShape EntityType="PI2220_DBModel.Status_narudzbe" Width="1.5" PointX="0.75" PointY="1.125" />
         <AssociationConnector Association="PI2220_DBModel.FK_Narudzba_Status_narudzbe" />
-        <EntityTypeShape EntityType="PI2220_DBModel.Rezervacija" Width="1.5" PointX="5.25" PointY="11.125" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Raspored" Width="1.5" PointX="8.25" PointY="11.875" />
+        <EntityTypeShape EntityType="PI2220_DBModel.TipSmjene" Width="1.5" PointX="6" PointY="8" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Raspored_Korisnik" />
+        <AssociationConnector Association="PI2220_DBModel.FK_Raspored_TipSmjene" />
+        <EntityTypeShape EntityType="PI2220_DBModel.Rezervacija" Width="1.5" PointX="5.25" PointY="11.375" />
         <AssociationConnector Association="PI2220_DBModel.FK_Rezervacija_id_dodao" />
-        <AssociationConnector Association="PI2220_DBModel.FK_Rezervacija_id_odobrio" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

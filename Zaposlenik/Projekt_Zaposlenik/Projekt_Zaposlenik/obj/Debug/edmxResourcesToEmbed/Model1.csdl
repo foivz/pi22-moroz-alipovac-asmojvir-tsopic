@@ -28,8 +28,8 @@
     <Property Name="id_uloga" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Uloga" Relationship="Self.FK_Korisnik_Uloga" FromRole="Korisnik" ToRole="Uloga" />
     <NavigationProperty Name="Racuns" Relationship="Self.FK_Racun_Korisnik" FromRole="Korisnik" ToRole="Racun" />
+    <NavigationProperty Name="Rasporeds" Relationship="PI2220_DBModel.FK_Raspored_Korisnik" FromRole="Korisnik" ToRole="Raspored" />
     <NavigationProperty Name="Rezervacijas" Relationship="PI2220_DBModel.FK_Rezervacija_id_dodao" FromRole="Korisnik" ToRole="Rezervacija" />
-    <NavigationProperty Name="Rezervacijas1" Relationship="PI2220_DBModel.FK_Rezervacija_id_odobrio" FromRole="Korisnik" ToRole="Rezervacija" />
   </EntityType>
   <EntityType Name="Narudzba">
     <Key>
@@ -217,12 +217,18 @@
       <End Role="Status_narudzbe" EntitySet="Status_narudzbes" />
       <End Role="Narudzba" EntitySet="Narudzbas" />
     </AssociationSet>
+    <EntitySet Name="Rasporeds" EntityType="PI2220_DBModel.Raspored" />
+    <EntitySet Name="TipSmjenes" EntityType="PI2220_DBModel.TipSmjene" />
+    <AssociationSet Name="FK_Raspored_Korisnik" Association="PI2220_DBModel.FK_Raspored_Korisnik">
+      <End Role="Korisnik" EntitySet="Korisniks" />
+      <End Role="Raspored" EntitySet="Rasporeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Raspored_TipSmjene" Association="PI2220_DBModel.FK_Raspored_TipSmjene">
+      <End Role="TipSmjene" EntitySet="TipSmjenes" />
+      <End Role="Raspored" EntitySet="Rasporeds" />
+    </AssociationSet>
     <EntitySet Name="Rezervacijas" EntityType="PI2220_DBModel.Rezervacija" />
     <AssociationSet Name="FK_Rezervacija_id_dodao" Association="PI2220_DBModel.FK_Rezervacija_id_dodao">
-      <End Role="Korisnik" EntitySet="Korisniks" />
-      <End Role="Rezervacija" EntitySet="Rezervacijas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Rezervacija_id_odobrio" Association="PI2220_DBModel.FK_Rezervacija_id_odobrio">
       <End Role="Korisnik" EntitySet="Korisniks" />
       <End Role="Rezervacija" EntitySet="Rezervacijas" />
     </AssociationSet>
@@ -247,6 +253,51 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Raspored">
+    <Key>
+      <PropertyRef Name="id_raspored" />
+    </Key>
+    <Property Name="id_raspored" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="radni_dan" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="id_smjena" Type="Int32" Nullable="false" />
+    <Property Name="id_zaposlenik" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Korisnik" Relationship="PI2220_DBModel.FK_Raspored_Korisnik" FromRole="Raspored" ToRole="Korisnik" />
+    <NavigationProperty Name="TipSmjene" Relationship="PI2220_DBModel.FK_Raspored_TipSmjene" FromRole="Raspored" ToRole="TipSmjene" />
+  </EntityType>
+  <EntityType Name="TipSmjene">
+    <Key>
+      <PropertyRef Name="id_tip_smjene" />
+    </Key>
+    <Property Name="id_tip_smjene" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tip_smjene" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="vrijeme_pocetka" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="vrijeme_kraja" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Rasporeds" Relationship="PI2220_DBModel.FK_Raspored_TipSmjene" FromRole="TipSmjene" ToRole="Raspored" />
+  </EntityType>
+  <Association Name="FK_Raspored_Korisnik">
+    <End Type="PI2220_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
+    <End Type="PI2220_DBModel.Raspored" Role="Raspored" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="id_korisnik" />
+      </Principal>
+      <Dependent Role="Raspored">
+        <PropertyRef Name="id_zaposlenik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Raspored_TipSmjene">
+    <End Type="PI2220_DBModel.TipSmjene" Role="TipSmjene" Multiplicity="1" />
+    <End Type="PI2220_DBModel.Raspored" Role="Raspored" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipSmjene">
+        <PropertyRef Name="id_tip_smjene" />
+      </Principal>
+      <Dependent Role="Raspored">
+        <PropertyRef Name="id_smjena" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityType Name="Rezervacija">
     <Key>
       <PropertyRef Name="id_rezervacije" />
@@ -259,11 +310,9 @@
     <Property Name="datum_rezervacije" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="odobrena" Type="Byte" Nullable="false" />
     <Property Name="id_dodao" Type="Int32" Nullable="false" />
-    <Property Name="id_odobrio" Type="Int32" Nullable="false" />
     <Property Name="datum_dogadaja" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="opis_dogadaja" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Korisnik" Relationship="PI2220_DBModel.FK_Rezervacija_id_dodao" FromRole="Rezervacija" ToRole="Korisnik" />
-    <NavigationProperty Name="Korisnik1" Relationship="PI2220_DBModel.FK_Rezervacija_id_odobrio" FromRole="Rezervacija" ToRole="Korisnik" />
   </EntityType>
   <Association Name="FK_Rezervacija_id_dodao">
     <End Type="PI2220_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
@@ -274,18 +323,6 @@
       </Principal>
       <Dependent Role="Rezervacija">
         <PropertyRef Name="id_dodao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Rezervacija_id_odobrio">
-    <End Type="PI2220_DBModel.Korisnik" Role="Korisnik" Multiplicity="1" />
-    <End Type="PI2220_DBModel.Rezervacija" Role="Rezervacija" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Korisnik">
-        <PropertyRef Name="id_korisnik" />
-      </Principal>
-      <Dependent Role="Rezervacija">
-        <PropertyRef Name="id_odobrio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

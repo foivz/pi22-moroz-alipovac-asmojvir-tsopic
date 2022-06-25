@@ -34,6 +34,8 @@ namespace Projekt_Zaposlenik
         public virtual DbSet<Uloga> Ulogas { get; set; }
         public virtual DbSet<Vrsta_artikla> Vrsta_artiklas { get; set; }
         public virtual DbSet<Status_narudzbe> Status_narudzbes { get; set; }
+        public virtual DbSet<Raspored> Rasporeds { get; set; }
+        public virtual DbSet<TipSmjene> TipSmjenes { get; set; }
         public virtual DbSet<Rezervacija> Rezervacijas { get; set; }
     }
 }

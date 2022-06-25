@@ -25,9 +25,18 @@ namespace Projekt_Zaposlenik
         private void RegistracijaForm_Load(object sender, EventArgs e)
         {
             DohvatiRegistracije();
+            DohvatiKorisnike();
         }
 
-       
+        private void DohvatiKorisnike()
+        {
+            using (var context = new PI2220_DBEntities())
+            {
+                var query = from k in context.Korisniks
+                            select k;
+                cmbDodao.DataSource = query.ToList();
+            } ;
+        }
 
         private void DohvatiRegistracije()
         {
@@ -43,7 +52,8 @@ namespace Projekt_Zaposlenik
                                 DatumRezervacije = r.datum_rezervacije,
                                 DatumDogadaja = r.datum_dogadaja,
                                 Dodao = r.Korisnik.ime + " " + r.Korisnik.prezime,
-                                Odobreno = r.odobrena
+                                Odobreno = r.odobrena,
+                                Opis = r.opis_dogadaja
                             };
                 dgvRegistracija.DataSource = query.ToList();
             }
@@ -51,7 +61,52 @@ namespace Projekt_Zaposlenik
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            
+            string poruka = "";
+            using (var context = new PI2220_DBEntities())
+            {
+                string email= txtEmail.Text;
+                string ime = txtIme.Text;
+                string prezime = txtPrezime.Text;
+                string telefon = txtTelefon.Text;
+                DateTime datumDogadaja = datePickDatum.Value;
+                Korisnik unositelj = cmbDodao.SelectedItem as Korisnik;
+                string opis = txtOpis.Text;
 
+                if(ime=="" || prezime=="" || (telefon=="" && email == "") || opis == "")
+                {
+                    poruka = "Ispunite sva polja.";
+                }
+                else
+                {
+                    Rezervacija novaRezervacija = new Rezervacija()
+                    {
+                        id_rezervacije = default,
+                        email_gosta = email,
+                        tel_gosta = telefon,
+                        ime = ime,
+                        prezime = prezime,
+                        datum_rezervacije = DateTime.Now,
+                        odobrena = 0,
+                        id_dodao = unositelj.id_korisnik,
+                        datum_dogadaja = datumDogadaja,
+                        opis_dogadaja = opis
+                    };
+                    context.Rezervacijas.Add(novaRezervacija);
+                    context.SaveChanges();
+                    poruka = "Uspješno dodana rezervacija.";
+                }
+
+            }
+            MessageBox.Show(poruka);
+            txtEmail.Text = "";
+            txtIme.Text = "";
+            txtPrezime.Text = "";
+            txtTelefon.Text = "";
+            txtOpis.Text = "";
+            datePickDatum.Value = DateTime.Now;
+            DohvatiRegistracije();
         }
+        
     }
 }

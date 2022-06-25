@@ -18,8 +18,8 @@ namespace Projekt_Zaposlenik
         public Korisnik()
         {
             this.Racuns = new HashSet<Racun>();
+            this.Rasporeds = new HashSet<Raspored>();
             this.Rezervacijas = new HashSet<Rezervacija>();
-            this.Rezervacijas1 = new HashSet<Rezervacija>();
         }
     
         public int id_korisnik { get; set; }
@@ -36,8 +36,8 @@ namespace Projekt_Zaposlenik
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Racun> Racuns { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rezervacija> Rezervacijas { get; set; }
+        public virtual ICollection<Raspored> Rasporeds { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rezervacija> Rezervacijas1 { get; set; }
+        public virtual ICollection<Rezervacija> Rezervacijas { get; set; }
     }
 }

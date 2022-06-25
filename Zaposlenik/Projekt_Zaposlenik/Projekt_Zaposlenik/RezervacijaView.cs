@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt_Zaposlenik
 {
-    public class RegistracijaView
+    public class RezervacijaView
     {
         public int Id_rezervacije { get; set; }
         public string Gost { get; set; }
@@ -16,6 +16,6 @@ namespace Projekt_Zaposlenik
         public DateTime DatumDogadaja { get; set; }
         public string Dodao { get; set; }
         public byte Odobreno { get; set; }
-        public string Opis { get; set; }
+
     }
 }

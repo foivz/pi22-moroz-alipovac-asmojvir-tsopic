@@ -90,12 +90,31 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Rasporeds">
+      <EntityTypeMapping TypeName="PI2220_DBModel.Raspored">
+        <MappingFragment StoreEntitySet="Raspored">
+          <ScalarProperty Name="id_zaposlenik" ColumnName="id_zaposlenik" />
+          <ScalarProperty Name="id_smjena" ColumnName="id_smjena" />
+          <ScalarProperty Name="radni_dan" ColumnName="radni_dan" />
+          <ScalarProperty Name="id_raspored" ColumnName="id_raspored" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipSmjenes">
+      <EntityTypeMapping TypeName="PI2220_DBModel.TipSmjene">
+        <MappingFragment StoreEntitySet="TipSmjene">
+          <ScalarProperty Name="vrijeme_kraja" ColumnName="vrijeme_kraja" />
+          <ScalarProperty Name="vrijeme_pocetka" ColumnName="vrijeme_pocetka" />
+          <ScalarProperty Name="tip_smjene" ColumnName="tip_smjene" />
+          <ScalarProperty Name="id_tip_smjene" ColumnName="id_tip_smjene" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Rezervacijas">
       <EntityTypeMapping TypeName="PI2220_DBModel.Rezervacija">
         <MappingFragment StoreEntitySet="Rezervacija">
           <ScalarProperty Name="opis_dogadaja" ColumnName="opis_dogadaja" />
           <ScalarProperty Name="datum_dogadaja" ColumnName="datum_dogadaja" />
-          <ScalarProperty Name="id_odobrio" ColumnName="id_odobrio" />
           <ScalarProperty Name="id_dodao" ColumnName="id_dodao" />
           <ScalarProperty Name="odobrena" ColumnName="odobrena" />
           <ScalarProperty Name="datum_rezervacije" ColumnName="datum_rezervacije" />

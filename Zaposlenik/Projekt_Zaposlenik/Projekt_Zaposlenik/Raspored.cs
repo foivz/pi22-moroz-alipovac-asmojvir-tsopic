@@ -12,19 +12,14 @@ namespace Projekt_Zaposlenik
     using System;
     using System.Collections.Generic;
     
-    public partial class Rezervacija
+    public partial class Raspored
     {
-        public int id_rezervacije { get; set; }
-        public string email_gosta { get; set; }
-        public string tel_gosta { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public System.DateTime datum_rezervacije { get; set; }
-        public byte odobrena { get; set; }
-        public int id_dodao { get; set; }
-        public System.DateTime datum_dogadaja { get; set; }
-        public string opis_dogadaja { get; set; }
+        public int id_raspored { get; set; }
+        public System.DateTime radni_dan { get; set; }
+        public int id_smjena { get; set; }
+        public int id_zaposlenik { get; set; }
     
         public virtual Korisnik Korisnik { get; set; }
+        public virtual TipSmjene TipSmjene { get; set; }
     }
 }
