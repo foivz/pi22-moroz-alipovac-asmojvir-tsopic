@@ -72,6 +72,14 @@ namespace Projekt_Zaposlenik
                                 Opis = r.opis_dogadaja
                             };
                 dgvRegistracija.DataSource = query.ToList();
+                dgvRegistracija.Columns[0].HeaderText = "Broj rezervacije";
+                dgvRegistracija.Columns[1].HeaderText = "Gost";
+                dgvRegistracija.Columns[2].HeaderText = "Email";
+                dgvRegistracija.Columns[3].HeaderText = "Telefon";
+                dgvRegistracija.Columns[4].HeaderText = "Datum rezervacije";
+                dgvRegistracija.Columns[5].HeaderText = "Datum događaja";
+                dgvRegistracija.Columns[6].HeaderText = "Dodao";
+                dgvRegistracija.Columns[7].HeaderText = "Odobreno";
             }
         }
 
@@ -152,9 +160,16 @@ namespace Projekt_Zaposlenik
         private void btnOdobri_Click(object sender, EventArgs e)
         {
             RegistracijaView odabranaRezervacija = dgvRegistracija.CurrentRow.DataBoundItem as RegistracijaView;
-            Provjera provjera = new Provjera(odabranaRezervacija);
-            provjera.ShowDialog();
-            Osjvezi();
+            if (odabranaRezervacija.Odobreno==0)
+            {
+                Provjera provjera = new Provjera(odabranaRezervacija);
+                provjera.ShowDialog();
+                Osjvezi();
+            }
+            else
+            {
+                MessageBox.Show("Rezervacija već odobrena");
+            }
         }
        
     }

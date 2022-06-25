@@ -36,11 +36,15 @@ namespace Projekt_Zaposlenik
             Rezervacija novaRezervacija = new Rezervacija();
             foreach (Korisnik korisnik in korisnici)
             {
-                if (korisnik.lozinka == lozinka)
-                {
-                    ispravno = true;
-                }
+                    if (korisnik.lozinka == lozinka)
+                    {
+                        if (korisnik.id_uloga == 3 || korisnik.id_uloga == 2)
+                            {
+                                ispravno = true;
+                            }
+                    }
             }
+           
             if (ispravno == true)
             {
                 using (var context = new PI2220_DBEntities())

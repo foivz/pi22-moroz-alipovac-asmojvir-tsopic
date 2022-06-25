@@ -46,6 +46,7 @@
             // 
             this.txtLozinka.Location = new System.Drawing.Point(22, 56);
             this.txtLozinka.Name = "txtLozinka";
+            this.txtLozinka.PasswordChar = '*';
             this.txtLozinka.Size = new System.Drawing.Size(178, 20);
             this.txtLozinka.TabIndex = 1;
             // 
@@ -63,6 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(231, 124);
             this.Controls.Add(this.brnPotvrdi);
             this.Controls.Add(this.txtLozinka);
