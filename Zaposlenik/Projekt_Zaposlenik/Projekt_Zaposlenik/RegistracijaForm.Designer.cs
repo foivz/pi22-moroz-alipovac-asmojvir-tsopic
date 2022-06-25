@@ -152,6 +152,7 @@
             this.btnOdobri.TabIndex = 10;
             this.btnOdobri.Text = "Odobri";
             this.btnOdobri.UseVisualStyleBackColor = true;
+            this.btnOdobri.Click += new System.EventHandler(this.btnOdobri_Click);
             // 
             // txtTelefon
             // 

@@ -59,23 +59,48 @@ namespace Projekt_Zaposlenik
             }
         }
 
+        public List<Rezervacija> DohvatiRezervacije()
+        {
+            using (var context = new PI2220_DBEntities())
+            {
+                return context.Rezervacijas.ToList();
+
+            }
+        }
+
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             
             string poruka = "";
+            bool greskaDatum = false;
+            List<Rezervacija> rezervacije = new List<Rezervacija>();
+            rezervacije = DohvatiRezervacije();
+
             using (var context = new PI2220_DBEntities())
             {
                 string email= txtEmail.Text;
                 string ime = txtIme.Text;
                 string prezime = txtPrezime.Text;
                 string telefon = txtTelefon.Text;
-                DateTime datumDogadaja = datePickDatum.Value;
+                DateTime datumDogadaja = datePickDatum.Value.Date;
                 Korisnik unositelj = cmbDodao.SelectedItem as Korisnik;
                 string opis = txtOpis.Text;
+
+                foreach (Rezervacija rezervacija in rezervacije)
+                {
+                    if (datumDogadaja == rezervacija.datum_dogadaja.Date)
+                    {
+                        greskaDatum=true;
+                    }
+                }
 
                 if(ime=="" || prezime=="" || (telefon=="" && email == "") || opis == "")
                 {
                     poruka = "Ispunite sva polja.";
+                }
+                else if (greskaDatum == true)
+                {
+                    poruka = "Datum koji ste odabrali već je zauzet.";
                 }
                 else
                 {
@@ -107,6 +132,12 @@ namespace Projekt_Zaposlenik
             datePickDatum.Value = DateTime.Now;
             DohvatiRegistracije();
         }
-        
+
+        private void btnOdobri_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
     }
 }
