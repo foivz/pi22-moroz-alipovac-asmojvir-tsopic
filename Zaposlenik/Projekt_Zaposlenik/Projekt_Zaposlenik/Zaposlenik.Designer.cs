@@ -33,6 +33,7 @@
             this.btnObrisi = new System.Windows.Forms.Button();
             this.btnAzuriraj = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.btnIzvjestaj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,12 +86,23 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
+            // btnIzvjestaj
+            // 
+            this.btnIzvjestaj.Location = new System.Drawing.Point(616, 62);
+            this.btnIzvjestaj.Name = "btnIzvjestaj";
+            this.btnIzvjestaj.Size = new System.Drawing.Size(172, 30);
+            this.btnIzvjestaj.TabIndex = 6;
+            this.btnIzvjestaj.Text = "Izvještaj svih zaposlenika";
+            this.btnIzvjestaj.UseVisualStyleBackColor = true;
+            this.btnIzvjestaj.Click += new System.EventHandler(this.btnIzvjestaj_Click);
+            // 
             // ZaposleniciForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 439);
+            this.Controls.Add(this.btnIzvjestaj);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnAzuriraj);
             this.Controls.Add(this.btnObrisi);
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnAzuriraj;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.Button btnIzvjestaj;
     }
 }

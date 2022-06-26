@@ -115,5 +115,11 @@ namespace Projekt_Zaposlenik
 
             }
         }
+
+        private void btnIzvjestaj_Click(object sender, EventArgs e)
+        {
+            SviZaposleniciIzvjestajForm form = new SviZaposleniciIzvjestajForm();
+            form.ShowDialog();
+        }
     }
 }
