@@ -12,9 +12,11 @@ namespace Projekt_Zaposlenik
 {
     public partial class ZaposleniciForm : Form
     {
-        public ZaposleniciForm()
+        Korisnik PrijavljeniKorisnik = new Korisnik();
+        public ZaposleniciForm(Korisnik korisnik)
         {
             InitializeComponent();
+            PrijavljeniKorisnik = korisnik;
         }
 
         private void ZaposleniciForm_Load(object sender, EventArgs e)
@@ -71,31 +73,39 @@ namespace Projekt_Zaposlenik
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            string poruka = "Jeste li sigurni da želite obrisati odabranog korisnika?";
-            string naslov = "Obriši korisnika";
-            MessageBoxButtons tipke = MessageBoxButtons.YesNo;
-            DialogResult rezultat = MessageBox.Show(poruka, naslov, tipke);
-            if (rezultat == DialogResult.Yes)
+            ZaposleniciView odabraniZaposlenik = dgvZaposlenici.CurrentRow.DataBoundItem as ZaposleniciView;
+            if (odabraniZaposlenik.IdZaposlenika!=PrijavljeniKorisnik.id_korisnik)
             {
-                ZaposleniciView odabraniZaposlenik = dgvZaposlenici.CurrentRow.DataBoundItem as ZaposleniciView;
-                List<Korisnik> korisnici = new List<Korisnik>();
-                korisnici = DohvatiSveKorisnike();
-                Korisnik zaBrisanje = new Korisnik();
-                using (var context = new PI2220_DBEntities())
+                string poruka = "Jeste li sigurni da želite obrisati odabranog korisnika?";
+                string naslov = "Obriši korisnika";
+                MessageBoxButtons tipke = MessageBoxButtons.YesNo;
+                DialogResult rezultat = MessageBox.Show(poruka, naslov, tipke);
+                if (rezultat == DialogResult.Yes)
                 {
-                    foreach (Korisnik korisnik in korisnici)
+                    List<Korisnik> korisnici = new List<Korisnik>();
+                    korisnici = DohvatiSveKorisnike();
+                    Korisnik zaBrisanje = new Korisnik();
+                    using (var context = new PI2220_DBEntities())
                     {
-                        if (korisnik.id_korisnik == odabraniZaposlenik.IdZaposlenika)
+                        foreach (Korisnik korisnik in korisnici)
                         {
-                            zaBrisanje = korisnik;
+                            if (korisnik.id_korisnik == odabraniZaposlenik.IdZaposlenika)
+                            {
+                                zaBrisanje = korisnik;
+                            }
                         }
+                        context.Korisniks.Attach(zaBrisanje);
+                        context.Korisniks.Remove(zaBrisanje);
+                        context.SaveChanges();
                     }
-                    context.Korisniks.Attach(zaBrisanje);
-                    context.Korisniks.Remove(zaBrisanje);
-                    context.SaveChanges();
+                    Osvjezi();
                 }
-                Osvjezi();
             }
+            else
+            {
+                MessageBox.Show("Ne možete obrisati trenutno prijavljenog korisnika.");
+            }
+            
         }
         public List<Korisnik> DohvatiSveKorisnike()
         {

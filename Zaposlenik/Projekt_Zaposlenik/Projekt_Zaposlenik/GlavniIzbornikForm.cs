@@ -53,7 +53,7 @@ namespace Projekt_Zaposlenik
 
         private void buttonProfili_Click(object sender, EventArgs e)
         {
-            ZaposleniciForm form = new ZaposleniciForm();
+            ZaposleniciForm form = new ZaposleniciForm(korisnik);
             form.ShowDialog();
         }
     }
