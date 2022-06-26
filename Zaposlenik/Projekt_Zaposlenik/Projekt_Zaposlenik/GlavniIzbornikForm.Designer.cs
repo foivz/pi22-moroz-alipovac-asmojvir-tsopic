@@ -134,6 +134,7 @@
             this.Controls.Add(this.buttonNarudzbe);
             this.Name = "GlavniIzbornikForm";
             this.Text = "GlavniIzbornikForm";
+            this.Load += new System.EventHandler(this.GlavniIzbornikForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

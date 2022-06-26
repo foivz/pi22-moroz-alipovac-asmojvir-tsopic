@@ -62,5 +62,18 @@ namespace Projekt_Zaposlenik
             SkladisteForm form = new SkladisteForm();
             form.ShowDialog();
         }
+
+        private void GlavniIzbornikForm_Load(object sender, EventArgs e)
+        {
+            if (korisnik.id_uloga==1)
+            {
+                buttonStatistika.Enabled = false;
+                buttonProfili.Enabled = false;
+            }
+            else if (korisnik.id_uloga == 2)
+            {
+                buttonProfili.Enabled = false;
+            }
+        }
     }
 }
