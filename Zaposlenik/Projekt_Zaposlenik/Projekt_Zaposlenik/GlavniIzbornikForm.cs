@@ -47,7 +47,7 @@ namespace Projekt_Zaposlenik
 
         private void buttonRaspored_Click(object sender, EventArgs e)
         {
-            RasporedForma form = new RasporedForma();
+            RasporedForma form = new RasporedForma(korisnik);
             form.ShowDialog();
         }
 

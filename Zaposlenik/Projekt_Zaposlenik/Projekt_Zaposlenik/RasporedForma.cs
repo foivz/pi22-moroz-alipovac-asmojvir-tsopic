@@ -12,14 +12,26 @@ namespace Projekt_Zaposlenik
 {
     public partial class RasporedForma : Form
     {
-        public RasporedForma()
+        public Korisnik Prijavljeni;
+        public RasporedForma(Korisnik prijavljeni)
         {
             InitializeComponent();
+            Prijavljeni = prijavljeni;
         }
 
         private void RasporedForma_Load(object sender, EventArgs e)
         {
             Osvjezi();
+            if(Prijavljeni.id_uloga == 1)
+            {
+                button3.Enabled = false;
+                buttonAzuriraj.Enabled = false;
+            }
+            else
+            {
+                button3.Enabled = true;
+                buttonAzuriraj.Enabled = true;
+            }
         }
 
         private void Osvjezi()
