@@ -20,7 +20,7 @@ Oznaka | Naziv                              | Kratki opis                       
 F01    | Prijava                            | Za pristup aplikaciji potrebna je prijava korisnika putem uloge admin, zaposlenik ili gost.      |Tin Sopić
 F02    | Kreiranje narudžbe                 | Gost stvara novu narudžbu u kojoj se nalazi popis napitaka koje on naručuje.                     |Tin Sopić
 F03    | Pregled narudžbi                   | Zaposlenik ima mogućnost pregleda svih narudžbi te dodjeljivanja statusa pojedine narudžbe.      |Tin Sopić
-F04    | Kreiranje i izdavanje računa       | Zaposlenik kreira i izdaje račun gostu s QR kodom. Slanje računa u PDF obliku na e-mail.         |Antonio Lipovac
+F04    | Kreiranje i izdavanje računa       | Zaposlenik kreira i izdaje račun gostu s QR kodom. Slanje računa u PDF obliku na e-mail.         |Tin Sopić
 F05    | Pregled popisa pića                | Admin, zaposlenik i gost imaju mogućnost pregleda cjenika.                                     |Marin Oroz
 F06    | Izmjena popisa pića                | Zaposlenik i admin  imaju mogućnost pregleda popisa pića.Admin ima mogućnost izmjene cjenika. Ispis cjenika u PDF obliku.          | Marin Oroz                                                                                                                                     
 F07    | Generiranje statistike za narudžbe | Generiranje statistike te njeno automatsko slanje na e-mail vlasniku kafića.                  |Marin Oroz
