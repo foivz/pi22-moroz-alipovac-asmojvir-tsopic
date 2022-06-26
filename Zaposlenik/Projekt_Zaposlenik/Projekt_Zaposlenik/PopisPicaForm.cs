@@ -15,8 +15,10 @@ namespace Projekt_Zaposlenik
 {
     public partial class PopisPicaForm : Form
     {
-        public PopisPicaForm()
+        Korisnik trenutniKorisnik;
+        public PopisPicaForm(Korisnik korisnik)
         {
+            trenutniKorisnik = korisnik;
             InitializeComponent();
         }
 
@@ -30,6 +32,12 @@ namespace Projekt_Zaposlenik
             RefreshGUI();
             Fill_Vrste_artikla();
             comboBoxVrsteArtikla.SelectedItem = null;
+            if (trenutniKorisnik.id_uloga == 1)
+            {
+                buttonAzuriraj.Enabled = false;
+                buttonDodaj.Enabled = false;
+                buttonObrisi.Enabled = false;
+            }
         }
 
         private void Fill_Vrste_artikla()

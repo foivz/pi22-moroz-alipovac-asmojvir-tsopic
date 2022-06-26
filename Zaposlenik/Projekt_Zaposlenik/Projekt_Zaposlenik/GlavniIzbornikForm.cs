@@ -29,7 +29,7 @@ namespace Projekt_Zaposlenik
 
         private void buttonPopisPica_Click(object sender, EventArgs e)
         {
-            PopisPicaForm form = new PopisPicaForm();
+            PopisPicaForm form = new PopisPicaForm(korisnik);
             form.ShowDialog();
         }
 
