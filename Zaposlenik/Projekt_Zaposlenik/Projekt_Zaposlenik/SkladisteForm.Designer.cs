@@ -32,9 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.textBoxKolicina = new System.Windows.Forms.TextBox();
             this.buttonProvjeri = new System.Windows.Forms.Button();
+            this.textBoxKolicina = new System.Windows.Forms.TextBox();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.buttonPrikazIzvjestaja = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladiste)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -79,20 +80,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Provjera";
             // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(104, 25);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 20);
-            this.textBoxID.TabIndex = 3;
-            // 
-            // textBoxKolicina
-            // 
-            this.textBoxKolicina.Location = new System.Drawing.Point(104, 55);
-            this.textBoxKolicina.Name = "textBoxKolicina";
-            this.textBoxKolicina.Size = new System.Drawing.Size(100, 20);
-            this.textBoxKolicina.TabIndex = 4;
-            // 
             // buttonProvjeri
             // 
             this.buttonProvjeri.Location = new System.Drawing.Point(129, 81);
@@ -103,12 +90,37 @@
             this.buttonProvjeri.UseVisualStyleBackColor = true;
             this.buttonProvjeri.Click += new System.EventHandler(this.buttonProvjeri_Click);
             // 
+            // textBoxKolicina
+            // 
+            this.textBoxKolicina.Location = new System.Drawing.Point(104, 55);
+            this.textBoxKolicina.Name = "textBoxKolicina";
+            this.textBoxKolicina.Size = new System.Drawing.Size(100, 20);
+            this.textBoxKolicina.TabIndex = 4;
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(104, 25);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(100, 20);
+            this.textBoxID.TabIndex = 3;
+            // 
+            // buttonPrikazIzvjestaja
+            // 
+            this.buttonPrikazIzvjestaja.Location = new System.Drawing.Point(469, 246);
+            this.buttonPrikazIzvjestaja.Name = "buttonPrikazIzvjestaja";
+            this.buttonPrikazIzvjestaja.Size = new System.Drawing.Size(125, 23);
+            this.buttonPrikazIzvjestaja.TabIndex = 6;
+            this.buttonPrikazIzvjestaja.Text = "Prikaz izvještaja";
+            this.buttonPrikazIzvjestaja.UseVisualStyleBackColor = true;
+            this.buttonPrikazIzvjestaja.Click += new System.EventHandler(this.buttonPrikazIzvjestaja_Click);
+            // 
             // SkladisteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(608, 369);
+            this.Controls.Add(this.buttonPrikazIzvjestaja);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewSkladiste);
             this.Name = "SkladisteForm";
@@ -130,5 +142,6 @@
         private System.Windows.Forms.Button buttonProvjeri;
         private System.Windows.Forms.TextBox textBoxKolicina;
         private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.Button buttonPrikazIzvjestaja;
     }
 }

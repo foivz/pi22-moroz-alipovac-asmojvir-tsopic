@@ -158,3 +158,4 @@ C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Proje
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.SviZaposleniciIzvjestajForm.resources
+C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.StanjeSkladistaForm.resources

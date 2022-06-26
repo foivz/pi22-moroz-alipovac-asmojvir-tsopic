@@ -36,6 +36,7 @@ namespace Projekt_Zaposlenik
 
             textBoxID.Text = "";
             textBoxKolicina.Text = "";
+            
         }
 
         private void buttonProvjeri_Click(object sender, EventArgs e)
@@ -108,6 +109,12 @@ namespace Projekt_Zaposlenik
                     }
                 }
             }
+        }
+
+        private void buttonPrikazIzvjestaja_Click(object sender, EventArgs e)
+        {
+            StanjeSkladistaForm stanjeSkladista = new StanjeSkladistaForm();
+            stanjeSkladista.ShowDialog();
         }
     }
 }

@@ -213,6 +213,12 @@
       <DependentUpon>SkladisteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="StanjeSkladistaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StanjeSkladistaForm.Designer.cs">
+      <DependentUpon>StanjeSkladistaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StatistikaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +317,10 @@
     <EmbeddedResource Include="SkladisteForm.resx">
       <DependentUpon>SkladisteForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StanjeSkladista.rdlc" />
+    <EmbeddedResource Include="StanjeSkladistaForm.resx">
+      <DependentUpon>StanjeSkladistaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatistikaForm.resx">
       <DependentUpon>StatistikaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,9 +338,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Artikl.datasource" />
     <None Include="Properties\DataSources\Korisnik.datasource" />
     <None Include="Properties\DataSources\PI2220_DBEntities.datasource" />
     <None Include="Properties\DataSources\Uloga.datasource" />
+    <None Include="Properties\DataSources\Vrsta_artikla.datasource" />
     <None Include="Properties\DataSources\ZaposleniciForm.datasource" />
     <None Include="Properties\DataSources\ZaposleniciView.datasource" />
     <None Include="Properties\Settings.settings">
