@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projekt_Zaposlenik
 {
-    public partial class RegistracijaForm : Form
+    public partial class RezervacijaForm : Form
     {
-        public RegistracijaForm()
+        public RezervacijaForm()
         {
             InitializeComponent();
         }
@@ -29,6 +29,7 @@ namespace Projekt_Zaposlenik
 
         private void Osvjezi()
         {
+           
             DohvatiRegistracije();
             DohvatiKorisnike();
             foreach (DataGridViewRow row in dgvRegistracija.Rows)
@@ -181,22 +182,8 @@ namespace Projekt_Zaposlenik
             if (rezultat == DialogResult.Yes)
             {
                 RegistracijaView odabranaRezervacija = dgvRegistracija.CurrentRow.DataBoundItem as RegistracijaView;
-                List<Rezervacija> rezervacije = new List<Rezervacija>();
-                rezervacije = DohvatiRezervacije();
-                Rezervacija novaRezervacija = new Rezervacija();
-                using (var context = new PI2220_DBEntities())
-                {
-                    foreach (Rezervacija rezervacija in rezervacije)
-                    {
-                        if (rezervacija.id_rezervacije == odabranaRezervacija.Id_rezervacije)
-                        {
-                            novaRezervacija = rezervacija;
-                        }
-                    }
-                    context.Rezervacijas.Attach(novaRezervacija);
-                    context.Rezervacijas.Remove(novaRezervacija);
-                    context.SaveChanges();
-                }
+                ProvjeraBrisanjaForm provjera = new ProvjeraBrisanjaForm(odabranaRezervacija);
+                provjera.ShowDialog();
                 Osvjezi();
             }
         }

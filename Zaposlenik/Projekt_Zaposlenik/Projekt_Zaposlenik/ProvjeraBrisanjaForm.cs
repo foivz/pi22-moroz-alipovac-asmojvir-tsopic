@@ -10,25 +10,22 @@ using System.Windows.Forms;
 
 namespace Projekt_Zaposlenik
 {
-    public partial class Provjera : Form
+    public partial class ProvjeraBrisanjaForm : Form
     {
         public bool ispravno = false;
         RegistracijaView OdabranaRezervacija = new RegistracijaView();
-        
-        public Provjera(RegistracijaView odabranaRezervacija)
+        public ProvjeraBrisanjaForm(RegistracijaView odabranaRezervacija)
         {
-            
             InitializeComponent();
             OdabranaRezervacija = odabranaRezervacija;
-           
         }
 
-        private void Provjera_Load(object sender, EventArgs e)
+        private void ProvjeraBrisanjaForm_Load(object sender, EventArgs e)
         {
 
         }
-  
-        private void brnPotvrdi_Click(object sender, EventArgs e)
+
+        private void btnPotvrdi_Click(object sender, EventArgs e)
         {
             string lozinka = txtLozinka.Text;
             List<Korisnik> korisnici = new List<Korisnik>();
@@ -38,15 +35,14 @@ namespace Projekt_Zaposlenik
             Rezervacija novaRezervacija = new Rezervacija();
             foreach (Korisnik korisnik in korisnici)
             {
-                    if (korisnik.lozinka == lozinka)
+                if (korisnik.lozinka == lozinka)
+                {
+                    if (korisnik.id_uloga == 3 || korisnik.id_uloga == 2)
                     {
-                        if (korisnik.id_uloga == 3 || korisnik.id_uloga == 2)
-                        {
-                            ispravno = true;
-                        }
-                    } 
+                        ispravno = true;
+                    }
+                }
             }
-           
             if (ispravno == true)
             {
                 using (var context = new PI2220_DBEntities())
@@ -59,10 +55,9 @@ namespace Projekt_Zaposlenik
                         }
                     }
                     context.Rezervacijas.Attach(novaRezervacija);
-                    novaRezervacija.odobrena = 1;
+                    context.Rezervacijas.Remove(novaRezervacija);
                     context.SaveChanges();
                 }
-                
                 this.Close();
             }
             else

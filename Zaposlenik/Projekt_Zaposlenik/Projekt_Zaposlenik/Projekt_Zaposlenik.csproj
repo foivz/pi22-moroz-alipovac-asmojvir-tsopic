@@ -158,6 +158,12 @@
     <Compile Include="Provjera.Designer.cs">
       <DependentUpon>Provjera.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProvjeraBrisanjaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProvjeraBrisanjaForm.Designer.cs">
+      <DependentUpon>ProvjeraBrisanjaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Racun.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -266,6 +272,9 @@
     </Compile>
     <EmbeddedResource Include="Provjera.resx">
       <DependentUpon>Provjera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProvjeraBrisanjaForm.resx">
+      <DependentUpon>ProvjeraBrisanjaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RasporedForma.resx">
       <DependentUpon>RasporedForma.cs</DependentUpon>

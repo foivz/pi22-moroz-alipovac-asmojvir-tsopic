@@ -64,7 +64,6 @@ C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Proje
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.csproj.CopyComplete
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.exe
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.pdb
-C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.RegistracijaForm.resources
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.Provjera.resources
 C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.csproj.AssemblyReference.cache
 C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.csproj.SuggestedBindingRedirects.cache
@@ -105,3 +104,5 @@ C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\P
 C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.SkladisteForm.resources
 C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.ZaposleniciForm.resources
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.SkladisteForm.resources
+C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.RezervacijaForm.resources
+C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.ProvjeraBrisanjaForm.resources

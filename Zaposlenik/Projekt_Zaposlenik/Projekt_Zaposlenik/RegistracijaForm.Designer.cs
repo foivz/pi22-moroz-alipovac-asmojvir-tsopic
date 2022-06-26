@@ -1,6 +1,6 @@
 ﻿namespace Projekt_Zaposlenik
 {
-    partial class RegistracijaForm
+    partial class RezervacijaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -247,7 +247,7 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Zeleno -> rezervacija odobrena";
             // 
-            // RegistracijaForm
+            // RezervacijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,8 +275,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvRegistracija);
-            this.Name = "RegistracijaForm";
-            this.Text = "RegistracijaForm";
+            this.Name = "RezervacijaForm";
+            this.Text = "Rezervacija ";
             this.Load += new System.EventHandler(this.RegistracijaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).EndInit();
             this.ResumeLayout(false);

@@ -41,7 +41,7 @@ namespace Projekt_Zaposlenik
 
         private void buttonRezervacije_Click(object sender, EventArgs e)
         {
-            RegistracijaForm form = new RegistracijaForm();
+            RezervacijaForm form = new RezervacijaForm();
             form.ShowDialog();
         }
 
