@@ -81,6 +81,7 @@
             this.btnDodaj.TabIndex = 4;
             this.btnDodaj.Text = "DODAJ ZAPOSLENIKA";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // ZaposleniciForm
             // 

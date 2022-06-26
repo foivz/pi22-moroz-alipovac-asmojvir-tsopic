@@ -53,5 +53,12 @@ namespace Projekt_Zaposlenik
                 dgvZaposlenici.Columns[7].HeaderText = "Uloga";
             }
         }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            DodajZaposlenikaForm form = new DodajZaposlenikaForm();
+            form.ShowDialog();
+            Osvjezi();
+        }
     }
 }
