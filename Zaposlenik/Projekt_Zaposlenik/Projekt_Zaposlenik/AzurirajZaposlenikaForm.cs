@@ -26,6 +26,7 @@ namespace Projekt_Zaposlenik
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool ispravno = true;
             bool greskaDatum = false;
             string upozorenje = "Jeste li sigurni da želite izmjeniti korisnikove podatke?";
             string naslov = "Ažuriranje";
@@ -33,19 +34,47 @@ namespace Projekt_Zaposlenik
             DialogResult rezultat = MessageBox.Show(upozorenje, naslov, tipke);
             if (rezultat == DialogResult.Yes)
             {
+                Uloga odabranaUloga = cmbUloga.SelectedItem as Uloga;
                 string poruka = "";
                 List<Korisnik> korisnici = new List<Korisnik>();
                 korisnici = DohvatiKorisnike();
                 Korisnik azuriraniKorisnik = new Korisnik();
-                Uloga odabranaUloga = cmbUloga.SelectedItem as Uloga;
-                if (azuriraniKorisnik.datum_rodenja >= DateTime.Now.Date)
+                int OIB;
+                bool isInt = Int32.TryParse(txtOIB.Text, out OIB);
+                if (isInt)
+                {
+                    OIB = int.Parse(txtOIB.Text);
+                    if (OIB <= 0)
+                    {
+                        ispravno = false;
+                    }
+                    else
+                    {
+                        foreach (Korisnik korisnik in korisnici)
+                        {
+                            if (korisnik.OIB == OIB && korisnik.id_korisnik!=int.Parse(txtIdZaposlenika.Text))
+                            {
+                                ispravno = false;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    ispravno = false;
+                }
+                if (datePickRodenje.Value >= DateTime.Now.Date)
                 {
                     greskaDatum = true;
-                }
 
-                if (azuriraniKorisnik.ime == "" || azuriraniKorisnik.prezime == "" || azuriraniKorisnik.korisnicko_ime == "" || azuriraniKorisnik.adresa == "" || txtOIB.Text == "" || azuriraniKorisnik.lozinka == "")
+                }
+                if (txtIme.Text == "" || txtPrezime.Text == "" || txtKorisnicko.Text == "" || txtAdresa.Text == "" || txtOIB.Text == "" || txtLozinka.Text == "")
                 {
                     poruka = "Ispunite sva polja.";
+                }
+                else if (ispravno == false)
+                {
+                    poruka = "OIB neispravan.";
                 }
                 else if (greskaDatum == true)
                 {
@@ -67,13 +96,12 @@ namespace Projekt_Zaposlenik
                         azuriraniKorisnik.prezime = txtPrezime.Text;
                         azuriraniKorisnik.datum_rodenja = datePickRodenje.Value;
                         azuriraniKorisnik.adresa = txtAdresa.Text;
-                        azuriraniKorisnik.OIB = int.Parse(txtOIB.Text);
+                        azuriraniKorisnik.OIB = OIB;
                         azuriraniKorisnik.korisnicko_ime = txtKorisnicko.Text;
                         azuriraniKorisnik.lozinka = txtLozinka.Text;
                         azuriraniKorisnik.id_uloga = odabranaUloga.id_uloga;
                         poruka = "Uspješno ažuriran korisnik.";
                         context.SaveChanges();
-                        Close();
                     }
                 }
                 MessageBox.Show(poruka);

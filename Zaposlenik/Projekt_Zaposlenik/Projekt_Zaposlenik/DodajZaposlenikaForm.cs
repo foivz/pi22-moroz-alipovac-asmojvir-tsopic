@@ -26,13 +26,39 @@ namespace Projekt_Zaposlenik
         {
             string poruka = "";
             bool greskaDatum = false;
+            bool ispravno = true;
+            List<Korisnik> korisnici = new List<Korisnik>();
+            korisnici = DohvatiKorisnike();
             using (var context = new PI2220_DBEntities())
             {
                 string ime = txtIme.Text;
                 string prezime = txtPrezime.Text;
                 DateTime datumRodenja = datePickRodenje.Value.Date;
                 string adresa = txtAdresa.Text;
-                int OIB = int.Parse(txtOIB.Text);
+                int OIB;
+                bool isInt = Int32.TryParse(txtOIB.Text, out OIB);
+                if (isInt)
+                {
+                    OIB = int.Parse(txtOIB.Text);
+                    if (OIB <= 0)
+                    {
+                        ispravno = false;
+                    }
+                    else
+                    {
+                        foreach (Korisnik korisnik in korisnici)
+                        {
+                            if (korisnik.OIB==OIB)
+                            {
+                                ispravno = false;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    ispravno = false;
+                }
                 string korisnickoIme = txtKorisnicko.Text;
                 string lozinka = txtLozinka.Text;
                 Uloga odabranaUloga = cmbUloga.SelectedItem as Uloga;
@@ -49,6 +75,10 @@ namespace Projekt_Zaposlenik
                 else if (greskaDatum == true)
                 {
                     poruka = "Pogrešan datum.";
+                }
+                else if (ispravno == false)
+                {
+                    poruka = "OIB neispravan.";
                 }
                 else
                 {
@@ -94,6 +124,14 @@ namespace Projekt_Zaposlenik
             using (var context = new PI2220_DBEntities())
             {
                 return context.Ulogas.ToList();
+            }
+        }
+        public List<Korisnik> DohvatiKorisnike()
+        {
+            using (var context = new PI2220_DBEntities())
+            {
+                return context.Korisniks.ToList();
+
             }
         }
 
