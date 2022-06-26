@@ -104,3 +104,4 @@ C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\P
 C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.DodajZaposlenikaForm.resources
 C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.SkladisteForm.resources
 C:\Users\Relaxic\Desktop\github\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.ZaposleniciForm.resources
+C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.SkladisteForm.resources

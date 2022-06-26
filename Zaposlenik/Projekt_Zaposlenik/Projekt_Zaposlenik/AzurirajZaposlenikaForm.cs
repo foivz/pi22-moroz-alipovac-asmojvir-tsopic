@@ -65,6 +65,7 @@ namespace Projekt_Zaposlenik
             string[] odvojeno = OdabraniKorisnik.Zaposlenik.Split(' ');
             List<Uloga> uloge = DohvatiUloge();
             cmbUloga.DataSource = uloge;
+            cmbUloga.Text = OdabraniKorisnik.Uloga;
             txtIdZaposlenika.Text = OdabraniKorisnik.IdZaposlenika.ToString();
             txtIme.Text = odvojeno[0];
             txtPrezime.Text = odvojeno[1];
@@ -73,7 +74,6 @@ namespace Projekt_Zaposlenik
             txtOIB.Text = OdabraniKorisnik.OIB.ToString();
             txtKorisnicko.Text = OdabraniKorisnik.KorisnickoIme;
             txtLozinka.Text = OdabraniKorisnik.Lozinka;
-            cmbUloga.SelectedItem = OdabraniKorisnik.Uloga;
         }
 
         private List<Uloga> DohvatiUloge()

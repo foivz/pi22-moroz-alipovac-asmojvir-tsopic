@@ -48,6 +48,8 @@
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnObrisi = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).BeginInit();
             this.SuspendLayout();
             // 
@@ -225,12 +227,34 @@
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(953, 75);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(174, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Crveno -> rezervacija nije odobrena";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(953, 59);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(154, 13);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Zeleno -> rezervacija odobrena";
+            // 
             // RegistracijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1156, 523);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtOpis);
@@ -282,5 +306,7 @@
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

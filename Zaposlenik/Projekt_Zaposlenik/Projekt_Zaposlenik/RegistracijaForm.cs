@@ -58,7 +58,7 @@ namespace Projekt_Zaposlenik
         {
             using (var context = new PI2220_DBEntities())
             {
-                var query = from r in context.Rezervacijas.Include("Korisnik").Include("Korisnik1")
+                var query = from r in context.Rezervacijas
                             select new RegistracijaView
                             {
                                 Id_rezervacije= r.id_rezervacije,
