@@ -56,5 +56,11 @@ namespace Projekt_Zaposlenik
             ZaposleniciForm form = new ZaposleniciForm(korisnik);
             form.ShowDialog();
         }
+
+        private void buttonSkladiste_Click(object sender, EventArgs e)
+        {
+            SkladisteForm form = new SkladisteForm();
+            form.ShowDialog();
+        }
     }
 }

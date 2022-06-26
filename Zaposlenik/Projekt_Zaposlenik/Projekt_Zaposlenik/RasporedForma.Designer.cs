@@ -39,7 +39,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(426, 24);
+            this.dateTimePicker1.Location = new System.Drawing.Point(409, 24);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 0;
@@ -49,12 +49,12 @@
             this.dataGridViewRaspored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRaspored.Location = new System.Drawing.Point(13, 53);
             this.dataGridViewRaspored.Name = "dataGridViewRaspored";
-            this.dataGridViewRaspored.Size = new System.Drawing.Size(775, 223);
+            this.dataGridViewRaspored.Size = new System.Drawing.Size(758, 205);
             this.dataGridViewRaspored.TabIndex = 1;
             // 
             // buttonFiltriraj
             // 
-            this.buttonFiltriraj.Location = new System.Drawing.Point(632, 24);
+            this.buttonFiltriraj.Location = new System.Drawing.Point(615, 24);
             this.buttonFiltriraj.Name = "buttonFiltriraj";
             this.buttonFiltriraj.Size = new System.Drawing.Size(75, 23);
             this.buttonFiltriraj.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             // buttonAzuriraj
             // 
-            this.buttonAzuriraj.Location = new System.Drawing.Point(632, 282);
+            this.buttonAzuriraj.Location = new System.Drawing.Point(615, 264);
             this.buttonAzuriraj.Name = "buttonAzuriraj";
             this.buttonAzuriraj.Size = new System.Drawing.Size(75, 23);
             this.buttonAzuriraj.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(713, 282);
+            this.button3.Location = new System.Drawing.Point(696, 264);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             // buttonOsvjezi
             // 
-            this.buttonOsvjezi.Location = new System.Drawing.Point(713, 24);
+            this.buttonOsvjezi.Location = new System.Drawing.Point(696, 24);
             this.buttonOsvjezi.Name = "buttonOsvjezi";
             this.buttonOsvjezi.Size = new System.Drawing.Size(75, 23);
             this.buttonOsvjezi.TabIndex = 5;
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 317);
+            this.ClientSize = new System.Drawing.Size(788, 299);
             this.Controls.Add(this.buttonOsvjezi);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonAzuriraj);

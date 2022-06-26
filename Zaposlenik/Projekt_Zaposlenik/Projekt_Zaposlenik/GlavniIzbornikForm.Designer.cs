@@ -77,6 +77,7 @@
             this.buttonSkladiste.TabIndex = 3;
             this.buttonSkladiste.Text = "Skladište";
             this.buttonSkladiste.UseVisualStyleBackColor = true;
+            this.buttonSkladiste.Click += new System.EventHandler(this.buttonSkladiste_Click);
             // 
             // buttonStatistika
             // 
