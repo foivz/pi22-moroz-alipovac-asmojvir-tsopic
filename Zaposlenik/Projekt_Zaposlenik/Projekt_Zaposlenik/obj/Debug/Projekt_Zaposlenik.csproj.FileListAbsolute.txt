@@ -99,3 +99,4 @@ C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Proje
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.RasporedForma.resources
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.ZaposleniciForm.resources
 C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.DodajZaposlenikaForm.resources
+C:\Users\Antun\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.AzurirajZaposlenikaForm.resources

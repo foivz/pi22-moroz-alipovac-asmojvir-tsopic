@@ -74,6 +74,12 @@
     <Compile Include="AzurirajRasporedForm.Designer.cs">
       <DependentUpon>AzurirajRasporedForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AzurirajZaposlenikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AzurirajZaposlenikaForm.Designer.cs">
+      <DependentUpon>AzurirajZaposlenikaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajPiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,7 @@
     <Compile Include="TipSmjene.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Uloga.class.cs" />
     <Compile Include="Uloga.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -212,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AzurirajRasporedForm.resx">
       <DependentUpon>AzurirajRasporedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AzurirajZaposlenikaForm.resx">
+      <DependentUpon>AzurirajZaposlenikaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DodajPiceForm.resx">
       <DependentUpon>DodajPiceForm.cs</DependentUpon>

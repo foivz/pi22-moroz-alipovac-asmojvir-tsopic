@@ -63,6 +63,7 @@
             this.btnObrisi.TabIndex = 2;
             this.btnObrisi.Text = "OBRIŠI ZAPOSLENIKA";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnAzuriraj
             // 
@@ -72,6 +73,7 @@
             this.btnAzuriraj.TabIndex = 3;
             this.btnAzuriraj.Text = "AŽURIRAJ PODATKE";
             this.btnAzuriraj.UseVisualStyleBackColor = true;
+            this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
             // 
             // btnDodaj
             // 

@@ -24,10 +24,10 @@ namespace Projekt_Zaposlenik
 
         private void RegistracijaForm_Load(object sender, EventArgs e)
         {
-            Osjvezi();
+            Osvjezi();
         }
 
-        private void Osjvezi()
+        private void Osvjezi()
         {
             DohvatiRegistracije();
             DohvatiKorisnike();
@@ -154,7 +154,7 @@ namespace Projekt_Zaposlenik
             txtTelefon.Text = "";
             txtOpis.Text = "";
             datePickDatum.Value = DateTime.Now;
-            Osjvezi();
+            Osvjezi();
         }
 
         private void btnOdobri_Click(object sender, EventArgs e)
@@ -164,7 +164,7 @@ namespace Projekt_Zaposlenik
             {
                 Provjera provjera = new Provjera(odabranaRezervacija);
                 provjera.ShowDialog();
-                Osjvezi();
+                Osvjezi();
             }
             else
             {
@@ -197,7 +197,7 @@ namespace Projekt_Zaposlenik
                     context.Rezervacijas.Remove(novaRezervacija);
                     context.SaveChanges();
                 }
-                Osjvezi();
+                Osvjezi();
             }
         }
     }

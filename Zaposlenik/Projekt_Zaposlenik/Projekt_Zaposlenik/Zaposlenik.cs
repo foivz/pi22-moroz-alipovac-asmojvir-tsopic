@@ -60,5 +60,50 @@ namespace Projekt_Zaposlenik
             form.ShowDialog();
             Osvjezi();
         }
+
+        private void btnAzuriraj_Click(object sender, EventArgs e)
+        {
+            ZaposleniciView odabraniKorisnik = dgvZaposlenici.CurrentRow.DataBoundItem as ZaposleniciView;
+            AzurirajZaposlenikaForm form = new AzurirajZaposlenikaForm(odabraniKorisnik);
+            form.ShowDialog();
+            Osvjezi();
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            string poruka = "Jeste li sigurni da želite obrisati odabranog korisnika?";
+            string naslov = "Obriši korisnika";
+            MessageBoxButtons tipke = MessageBoxButtons.YesNo;
+            DialogResult rezultat = MessageBox.Show(poruka, naslov, tipke);
+            if (rezultat == DialogResult.Yes)
+            {
+                ZaposleniciView odabraniZaposlenik = dgvZaposlenici.CurrentRow.DataBoundItem as ZaposleniciView;
+                List<Korisnik> korisnici = new List<Korisnik>();
+                korisnici = DohvatiSveKorisnike();
+                Korisnik zaBrisanje = new Korisnik();
+                using (var context = new PI2220_DBEntities())
+                {
+                    foreach (Korisnik korisnik in korisnici)
+                    {
+                        if (korisnik.id_korisnik == odabraniZaposlenik.IdZaposlenika)
+                        {
+                            zaBrisanje = korisnik;
+                        }
+                    }
+                    context.Korisniks.Attach(zaBrisanje);
+                    context.Korisniks.Remove(zaBrisanje);
+                    context.SaveChanges();
+                }
+                Osvjezi();
+            }
+        }
+        public List<Korisnik> DohvatiSveKorisnike()
+        {
+            using (var context = new PI2220_DBEntities())
+            {
+                return context.Korisniks.ToList();
+
+            }
+        }
     }
 }
