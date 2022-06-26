@@ -80,6 +80,7 @@
     <Compile Include="Artikl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ArtiklView.cs" />
     <Compile Include="AzurirajArtiklForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,8 +12,8 @@ namespace Projekt_Zaposlenik
 {
     public partial class AzurirajArtiklForm : Form
     {
-        public Artikl odabraniArtikl;
-        public AzurirajArtiklForm(Artikl artikl)
+        public ArtiklView odabraniArtikl;
+        public AzurirajArtiklForm(ArtiklView artikl)
         {
             InitializeComponent();
             Fill_Vrste_artikla();
@@ -31,11 +31,11 @@ namespace Projekt_Zaposlenik
 
         private void AzurirajArtiklForm_Load(object sender, EventArgs e)
         {
-            textBoxArtikl.Text = odabraniArtikl.naziv_artikla;
-            textBoxKolicina.Text = odabraniArtikl.kolicina_u_litrama.ToString();
+            textBoxArtikl.Text = odabraniArtikl.naziv;
+            textBoxKolicina.Text = odabraniArtikl.kolicinaL.ToString();
             textBoxCijena.Text = odabraniArtikl.cijena.ToString();
-            textBoxSkladiste.Text = odabraniArtikl.kolicina_u_skladistu.ToString();
-            comboBoxVrsta.Text = odabraniArtikl.Vrsta_artikla.ToString();
+            textBoxSkladiste.Text = odabraniArtikl.skladiste.ToString();
+            comboBoxVrsta.Text = odabraniArtikl.vrsta;
         }
 
         private void buttonAzuriraj_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Projekt_Zaposlenik
             using (var context = new PI2220_DBEntities())
             {
                 Vrsta_artikla vrsta = comboBoxVrsta.SelectedItem as Vrsta_artikla;
-                var item = context.Artikls.SingleOrDefault(i => i.id_artikl == odabraniArtikl.id_artikl);
+                var item = context.Artikls.SingleOrDefault(i => i.id_artikl == odabraniArtikl.ArtiklId);
                 item.naziv_artikla = textBoxArtikl.Text;
                 item.kolicina_u_litrama = double.Parse(textBoxKolicina.Text);
                 item.kolicina_u_skladistu = int.Parse(textBoxSkladiste.Text);

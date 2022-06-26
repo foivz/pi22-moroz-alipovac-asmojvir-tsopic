@@ -55,46 +55,59 @@ namespace Projekt_Zaposlenik
             using (var context = new PI2220_DBEntities())
             {
                 var query = from a in context.Artikls.Include("Vrsta_artikla").Include("stavka_narudzbe")
-                            select a;
+                            select new ArtiklView
+                            {
+                                ArtiklId = a.id_artikl,
+                                naziv = a.naziv_artikla,
+                                cijena = a.cijena,
+                                kolicinaL = a.kolicina_u_litrama,
+                                skladiste = a.kolicina_u_skladistu,
+                                vrsta = a.Vrsta_artikla.naziv_vrste_artikla
+                            };
                 dataGridViewPopis.DataSource = query.ToList();
-                dataGridViewPopis.Columns["stavka_narudzbe"].Visible = false;
-                dataGridViewPopis.Columns["kolicina_u_skladistu"].Visible = false;
-                dataGridViewPopis.Columns["id_vrste_artikla"].Visible = false;
             }
         }
 
         private void buttonFiltriraj_Click(object sender, EventArgs e)
         {
             string naziv = comboBoxVrsteArtikla.Text;
-            if (naziv != null)
+            if (naziv != "")
             {
                 using (var context = new PI2220_DBEntities())
                 {
-                    var query = from a in context.Artikls
+                    var query = from a in context.Artikls.Include("Vrsta_artikla").Include("stavka_narudzbe")
                                 join b in context.Vrsta_artiklas on a.id_vrste_artikla equals b.id_vrste_artikla
                                 where b.naziv_vrste_artikla == naziv.ToString()
-                                select a;
+                                select new ArtiklView
+                                {
+                                    ArtiklId = a.id_artikl,
+                                    naziv = a.naziv_artikla,
+                                    cijena = a.cijena,
+                                    kolicinaL = a.kolicina_u_litrama,
+                                    skladiste = a.kolicina_u_skladistu,
+                                    vrsta = a.Vrsta_artikla.naziv_vrste_artikla
+                                };
 
                     dataGridViewPopis.DataSource = query.ToList();
-                    dataGridViewPopis.Columns["stavka_narudzbe"].Visible = false;
-                    dataGridViewPopis.Columns["kolicina_u_skladistu"].Visible = false;
-                    dataGridViewPopis.Columns["id_vrste_artikla"].Visible = false;
-                    dataGridViewPopis.Columns["Vrsta_artikla"].Visible = false;
                 }
             }
             else
             {
                 using (var context = new PI2220_DBEntities())
                 {
-                    var query = from a in context.Artikls
+                    var query = from a in context.Artikls.Include("Vrsta_artikla").Include("stavka_narudzbe")
                                 join b in context.Vrsta_artiklas on a.id_vrste_artikla equals b.id_vrste_artikla
-                                select a;
+                                select new ArtiklView
+                                {
+                                    ArtiklId = a.id_artikl,
+                                    naziv = a.naziv_artikla,
+                                    cijena = a.cijena,
+                                    kolicinaL = a.kolicina_u_litrama,
+                                    skladiste = a.kolicina_u_skladistu,
+                                    vrsta = a.Vrsta_artikla.naziv_vrste_artikla
+                                };
 
                     dataGridViewPopis.DataSource = query.ToList();
-                    dataGridViewPopis.Columns["stavka_narudzbe"].Visible = false;
-                    dataGridViewPopis.Columns["kolicina_u_skladistu"].Visible = false;
-                    dataGridViewPopis.Columns["id_vrste_artikla"].Visible = false;
-                    dataGridViewPopis.Columns["Vrsta_artikla"].Visible = false;
                 }
             }
         }
@@ -107,12 +120,17 @@ namespace Projekt_Zaposlenik
             {
                 var query = from a in context.Artikls.Include("Vrsta_artikla")
                             where a.naziv_artikla.Contains(naziv)
-                            select a;
+                            select new ArtiklView
+                            {
+                                ArtiklId = a.id_artikl,
+                                naziv = a.naziv_artikla,
+                                cijena = a.cijena,
+                                kolicinaL = a.kolicina_u_litrama,
+                                skladiste = a.kolicina_u_skladistu,
+                                vrsta = a.Vrsta_artikla.naziv_vrste_artikla
+                            };
 
                 dataGridViewPopis.DataSource = query.ToList();
-                dataGridViewPopis.Columns["stavka_narudzbe"].Visible = false;
-                dataGridViewPopis.Columns["kolicina_u_skladistu"].Visible = false;
-                dataGridViewPopis.Columns["id_vrste_artikla"].Visible = false;
             }
         }
 
@@ -123,11 +141,17 @@ namespace Projekt_Zaposlenik
 
             if (dr == DialogResult.Yes)
             {
-                Artikl artikl = dataGridViewPopis.CurrentRow.DataBoundItem as Artikl;
+                ArtiklView artikl = dataGridViewPopis.CurrentRow.DataBoundItem as ArtiklView;
                 using (var context = new PI2220_DBEntities())
                 {
-                    context.Artikls.Attach(artikl);
-                    context.Artikls.Remove(artikl);
+                    List<Artikl> artikli = DohvatiPica();
+                    Artikl noviArtikl = new Artikl();
+                    foreach (Artikl item in artikli)
+                    {
+                        if (item.id_artikl == artikl.ArtiklId) noviArtikl = item;
+                    }
+                    context.Artikls.Attach(noviArtikl);
+                    context.Artikls.Remove(noviArtikl);
                     context.SaveChanges();
                 }
                 RefreshGUI();
@@ -144,7 +168,7 @@ namespace Projekt_Zaposlenik
 
         private void buttonAzuriraj_Click(object sender, EventArgs e)
         {
-            Artikl artikl = dataGridViewPopis.CurrentRow.DataBoundItem as Artikl;
+            ArtiklView artikl = dataGridViewPopis.CurrentRow.DataBoundItem as ArtiklView;
             AzurirajArtiklForm form = new AzurirajArtiklForm(artikl);
             form.ShowDialog();
             RefreshGUI();
@@ -196,6 +220,13 @@ namespace Projekt_Zaposlenik
         {
             dataGridViewPopis.Columns.Remove("stavka_narudzbe");
             ExportToPDF(dataGridViewPopis, "Cjenik");
+        }
+        public List<Artikl> DohvatiPica()
+        {
+            using (var context = new PI2220_DBEntities())
+            {
+                return context.Artikls.ToList();
+            }
         }
     }
 }
