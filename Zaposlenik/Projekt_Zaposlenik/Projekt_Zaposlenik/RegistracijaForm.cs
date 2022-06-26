@@ -95,7 +95,6 @@ namespace Projekt_Zaposlenik
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            
             string poruka = "";
             bool greskaDatum = false;
             List<Rezervacija> rezervacije = new List<Rezervacija>();
@@ -113,7 +112,7 @@ namespace Projekt_Zaposlenik
 
                 foreach (Rezervacija rezervacija in rezervacije)
                 {
-                    if (datumDogadaja == rezervacija.datum_dogadaja.Date)
+                    if (datumDogadaja == rezervacija.datum_dogadaja.Date || datumDogadaja< DateTime.Now.Date)
                     {
                         greskaDatum=true;
                     }
@@ -125,7 +124,7 @@ namespace Projekt_Zaposlenik
                 }
                 else if (greskaDatum == true)
                 {
-                    poruka = "Datum koji ste odabrali već je zauzet.";
+                    poruka = "Datum koji ste odabrali nije validan.";
                 }
                 else
                 {
@@ -144,17 +143,17 @@ namespace Projekt_Zaposlenik
                     };
                     context.Rezervacijas.Add(novaRezervacija);
                     context.SaveChanges();
+                    txtEmail.Text = "";
+                    txtIme.Text = "";
+                    txtPrezime.Text = "";
+                    txtTelefon.Text = "";
+                    txtOpis.Text = "";
+                    datePickDatum.Value = DateTime.Now;
                     poruka = "Uspješno dodana rezervacija.";
                 }
 
             }
             MessageBox.Show(poruka);
-            txtEmail.Text = "";
-            txtIme.Text = "";
-            txtPrezime.Text = "";
-            txtTelefon.Text = "";
-            txtOpis.Text = "";
-            datePickDatum.Value = DateTime.Now;
             Osvjezi();
         }
 

@@ -43,10 +43,10 @@
             this.txtKorisnicko = new System.Windows.Forms.TextBox();
             this.txtOIB = new System.Windows.Forms.TextBox();
             this.txtLozinka = new System.Windows.Forms.TextBox();
-            this.txtUlogaId = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.datePickRodenje = new System.Windows.Forms.DateTimePicker();
             this.btnOdustani = new System.Windows.Forms.Button();
+            this.cmbUloga = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -127,9 +127,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(52, 341);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Uloga id:";
+            this.label10.Text = "Uloga:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txtIme
@@ -174,13 +174,6 @@
             this.txtLozinka.Size = new System.Drawing.Size(237, 20);
             this.txtLozinka.TabIndex = 16;
             // 
-            // txtUlogaId
-            // 
-            this.txtUlogaId.Location = new System.Drawing.Point(107, 338);
-            this.txtUlogaId.Name = "txtUlogaId";
-            this.txtUlogaId.Size = new System.Drawing.Size(237, 20);
-            this.txtUlogaId.TabIndex = 17;
-            // 
             // btnDodaj
             // 
             this.btnDodaj.Location = new System.Drawing.Point(188, 369);
@@ -208,16 +201,24 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
+            // cmbUloga
+            // 
+            this.cmbUloga.FormattingEnabled = true;
+            this.cmbUloga.Location = new System.Drawing.Point(107, 338);
+            this.cmbUloga.Name = "cmbUloga";
+            this.cmbUloga.Size = new System.Drawing.Size(237, 21);
+            this.cmbUloga.TabIndex = 21;
+            // 
             // DodajZaposlenikaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(409, 418);
+            this.Controls.Add(this.cmbUloga);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.datePickRodenje);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.txtUlogaId);
             this.Controls.Add(this.txtLozinka);
             this.Controls.Add(this.txtOIB);
             this.Controls.Add(this.txtKorisnicko);
@@ -235,6 +236,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DodajZaposlenikaForm";
             this.Text = "Dodaj zaposlenika";
+            this.Load += new System.EventHandler(this.DodajZaposlenikaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,9 +259,9 @@
         private System.Windows.Forms.TextBox txtKorisnicko;
         private System.Windows.Forms.TextBox txtOIB;
         private System.Windows.Forms.TextBox txtLozinka;
-        private System.Windows.Forms.TextBox txtUlogaId;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.DateTimePicker datePickRodenje;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.ComboBox cmbUloga;
     }
 }

@@ -35,14 +35,14 @@ namespace Projekt_Zaposlenik
                 int OIB = int.Parse(txtOIB.Text);
                 string korisnickoIme = txtKorisnicko.Text;
                 string lozinka = txtLozinka.Text;
-                int id_uloga = int.Parse(txtUlogaId.Text);
+                Uloga odabranaUloga = cmbUloga.SelectedItem as Uloga;
 
                 if (datumRodenja >= DateTime.Now.Date)
                 {
-                   greskaDatum = true;
+                    greskaDatum = true;
                 }
 
-                if (ime == "" || prezime == "" || korisnickoIme == "" || adresa == "" || txtOIB.Text == "" || lozinka == "" || txtUlogaId.Text == "")
+                if (ime == "" || prezime == "" || korisnickoIme == "" || adresa == "" || txtOIB.Text == "" || lozinka == "")
                 {
                     poruka = "Ispunite sva polja.";
                 }
@@ -62,7 +62,7 @@ namespace Projekt_Zaposlenik
                         OIB = OIB,
                         korisnicko_ime = korisnickoIme,
                         lozinka = lozinka,
-                        id_uloga = id_uloga
+                        id_uloga = odabranaUloga.id_uloga
                     };
                     context.Korisniks.Add(noviZaposlenik);
                     context.SaveChanges();
@@ -74,7 +74,6 @@ namespace Projekt_Zaposlenik
                     txtOIB.Text = "";
                     txtKorisnicko.Text = "";
                     txtLozinka.Text = "";
-                    txtUlogaId.Text = "";
                 }
             }
             MessageBox.Show(poruka);
@@ -84,5 +83,19 @@ namespace Projekt_Zaposlenik
         {
             Close();
         }
+
+        private void DodajZaposlenikaForm_Load(object sender, EventArgs e)
+        {
+            List<Uloga> uloge = DohvatiUloge();
+            cmbUloga.DataSource = uloge;
+        }
+        private List<Uloga> DohvatiUloge()
+        {
+            using (var context = new PI2220_DBEntities())
+            {
+                return context.Ulogas.ToList();
+            }
+        }
+
     }
 }
