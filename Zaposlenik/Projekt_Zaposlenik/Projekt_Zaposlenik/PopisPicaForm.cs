@@ -40,7 +40,15 @@ namespace Projekt_Zaposlenik
             }
         }
 
-        
+        private void Fill_Vrste_artikla()
+        {
+            using (var context = new PI2220_DBEntities())
+            {
+                var query = from va in context.Vrsta_artiklas
+                            select va;
+                comboBoxVrsteArtikla.DataSource = query.ToList();
+            }
+        }
 
         private void RefreshGUI()
         {
@@ -60,15 +68,6 @@ namespace Projekt_Zaposlenik
             }
         }
 
-        private void Fill_Vrste_artikla()
-        {
-            using (var context = new PI2220_DBEntities())
-            {
-                var query = from va in context.Vrsta_artiklas
-                            select va;
-                comboBoxVrsteArtikla.DataSource = query.ToList();
-            }
-        }
         private void buttonFiltriraj_Click(object sender, EventArgs e)
         {
             string naziv = comboBoxVrsteArtikla.Text;
