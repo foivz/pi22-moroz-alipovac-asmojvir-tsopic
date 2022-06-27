@@ -22,13 +22,6 @@ namespace Projekt_Zaposlenik
             comboBox1.DataSource = strings;
             comboBox1.SelectedIndex = DateTime.Now.Month - 1;
         }
-
-        private void StatistikaForm_Load(object sender, EventArgs e)
-        {
-            RefreshGUI();
-            FillComboBox();
-        }
-
         private async void RefreshGUI()
         {
             using (var context = new PI2220_DBEntities())
@@ -38,7 +31,7 @@ namespace Projekt_Zaposlenik
                             join n in context.Narudzbas on sn.id_narudzba equals n.id_narudzba
                             where sn.id_artikl == a.id_artikl && n.datum_i_vrijeme.Month == DateTime.Now.Month
                             group sn.kolicina by new { a.naziv_artikla, a.Vrsta_artikla, a.cijena } into g
-                            select new {Naziv = g.Key.naziv_artikla, Vrsta = g.Key.Vrsta_artikla, Cijena = g.Key.cijena, Prodano = g.Sum()};
+                            select new { Naziv = g.Key.naziv_artikla, Vrsta = g.Key.Vrsta_artikla, Cijena = g.Key.cijena, Prodano = g.Sum() };
 
                 dataGridViewStatistika.DataSource = query.ToList();
                 double promet = 0;
@@ -49,6 +42,12 @@ namespace Projekt_Zaposlenik
                 }
                 textBoxPromet.Text = promet.ToString() + " KN";
             }
+        }
+
+        private void StatistikaForm_Load(object sender, EventArgs e)
+        {
+            RefreshGUI();
+            FillComboBox();
         }
 
         private async void RefreshGUIvol2(int index)
