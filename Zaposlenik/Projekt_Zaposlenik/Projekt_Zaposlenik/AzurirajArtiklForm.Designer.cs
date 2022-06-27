@@ -41,6 +41,7 @@
             this.textBoxArtikl = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // buttonAzuriraj
@@ -155,6 +156,11 @@
             this.label1.Text = "Ažuriraj artikl";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // AzurirajArtiklForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,7 +180,9 @@
             this.Controls.Add(this.textBoxArtikl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "AzurirajArtiklForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "AzurirajArtiklForm";
             this.Load += new System.EventHandler(this.AzurirajArtiklForm_Load);
             this.ResumeLayout(false);
@@ -197,5 +205,6 @@
         private System.Windows.Forms.TextBox textBoxArtikl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

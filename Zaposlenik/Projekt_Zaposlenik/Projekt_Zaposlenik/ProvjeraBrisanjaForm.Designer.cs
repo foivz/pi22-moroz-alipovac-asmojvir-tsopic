@@ -31,6 +31,7 @@
             this.txtLozinka = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPotvrdi = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // txtLozinka
@@ -60,6 +61,11 @@
             this.btnPotvrdi.UseVisualStyleBackColor = true;
             this.btnPotvrdi.Click += new System.EventHandler(this.btnPotvrdi_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // ProvjeraBrisanjaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -69,7 +75,9 @@
             this.Controls.Add(this.btnPotvrdi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLozinka);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "ProvjeraBrisanjaForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Obriši";
             this.Load += new System.EventHandler(this.ProvjeraBrisanjaForm_Load);
             this.ResumeLayout(false);
@@ -82,5 +90,6 @@
         private System.Windows.Forms.TextBox txtLozinka;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPotvrdi;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

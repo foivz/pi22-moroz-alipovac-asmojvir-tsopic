@@ -34,6 +34,7 @@
             this.buttonAzuriraj = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonOsvjezi = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRaspored)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +93,11 @@
             this.buttonOsvjezi.UseVisualStyleBackColor = true;
             this.buttonOsvjezi.Click += new System.EventHandler(this.buttonOsvjezi_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // RasporedForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,7 +110,9 @@
             this.Controls.Add(this.buttonFiltriraj);
             this.Controls.Add(this.dataGridViewRaspored);
             this.Controls.Add(this.dateTimePicker1);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "RasporedForma";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Raspored";
             this.Load += new System.EventHandler(this.RasporedForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRaspored)).EndInit();
@@ -120,5 +128,6 @@
         private System.Windows.Forms.Button buttonAzuriraj;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonOsvjezi;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

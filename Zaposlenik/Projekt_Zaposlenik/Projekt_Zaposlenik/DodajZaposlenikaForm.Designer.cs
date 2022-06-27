@@ -47,6 +47,7 @@
             this.datePickRodenje = new System.Windows.Forms.DateTimePicker();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.cmbUloga = new System.Windows.Forms.ComboBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // label1
@@ -209,6 +210,11 @@
             this.cmbUloga.Size = new System.Drawing.Size(237, 21);
             this.cmbUloga.TabIndex = 21;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // DodajZaposlenikaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,7 +240,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "DodajZaposlenikaForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Dodaj zaposlenika";
             this.Load += new System.EventHandler(this.DodajZaposlenikaForm_Load);
             this.ResumeLayout(false);
@@ -263,5 +271,6 @@
         private System.Windows.Forms.DateTimePicker datePickRodenje;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.ComboBox cmbUloga;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

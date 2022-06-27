@@ -36,6 +36,7 @@
             this.textBoxBrojStola = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxUkupno = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosluzi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +109,11 @@
             this.textBoxUkupno.Size = new System.Drawing.Size(63, 20);
             this.textBoxUkupno.TabIndex = 7;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // PosluziForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,7 +128,9 @@
             this.Controls.Add(this.dgvPosluzi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "PosluziForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "PosluziForm";
             this.Load += new System.EventHandler(this.PosluziForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosluzi)).EndInit();
@@ -141,5 +149,6 @@
         private System.Windows.Forms.TextBox textBoxBrojStola;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxUkupno;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

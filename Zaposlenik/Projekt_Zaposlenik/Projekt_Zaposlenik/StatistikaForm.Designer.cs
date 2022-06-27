@@ -34,6 +34,7 @@
             this.textBoxPromet = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonOdaberi = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistika)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +92,11 @@
             this.buttonOdaberi.UseVisualStyleBackColor = true;
             this.buttonOdaberi.Click += new System.EventHandler(this.buttonOdaberi_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // StatistikaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,7 +109,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewStatistika);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "StatistikaForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "StatistikaForm";
             this.Load += new System.EventHandler(this.StatistikaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistika)).EndInit();
@@ -120,5 +128,6 @@
         private System.Windows.Forms.TextBox textBoxPromet;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button buttonOdaberi;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

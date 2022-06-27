@@ -50,6 +50,7 @@
             this.btnObrisi = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,6 +248,11 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Zeleno -> rezervacija odobrena";
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // RezervacijaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,7 +281,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvRegistracija);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "RezervacijaForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Rezervacija ";
             this.Load += new System.EventHandler(this.RegistracijaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistracija)).EndInit();
@@ -308,5 +316,6 @@
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

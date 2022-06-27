@@ -34,6 +34,7 @@
             this.btnAzuriraj = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnIzvjestaj = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +97,11 @@
             this.btnIzvjestaj.UseVisualStyleBackColor = true;
             this.btnIzvjestaj.Click += new System.EventHandler(this.btnIzvjestaj_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // ZaposleniciForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,7 +114,9 @@
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.dgvZaposlenici);
             this.Controls.Add(this.label1);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "ZaposleniciForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Zaposlenici";
             this.Load += new System.EventHandler(this.ZaposleniciForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaposlenici)).EndInit();
@@ -125,5 +133,6 @@
         private System.Windows.Forms.Button btnAzuriraj;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnIzvjestaj;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

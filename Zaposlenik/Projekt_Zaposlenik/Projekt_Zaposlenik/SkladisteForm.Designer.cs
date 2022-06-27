@@ -36,6 +36,7 @@
             this.textBoxKolicina = new System.Windows.Forms.TextBox();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.buttonPrikazIzvjestaja = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladiste)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +115,11 @@
             this.buttonPrikazIzvjestaja.UseVisualStyleBackColor = true;
             this.buttonPrikazIzvjestaja.Click += new System.EventHandler(this.buttonPrikazIzvjestaja_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // SkladisteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,7 +129,9 @@
             this.Controls.Add(this.buttonPrikazIzvjestaja);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewSkladiste);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "SkladisteForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Skladiste";
             this.Load += new System.EventHandler(this.SkladisteForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSkladiste)).EndInit();
@@ -143,5 +151,6 @@
         private System.Windows.Forms.TextBox textBoxKolicina;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Button buttonPrikazIzvjestaja;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

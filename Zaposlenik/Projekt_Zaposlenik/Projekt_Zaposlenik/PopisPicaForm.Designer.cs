@@ -39,6 +39,7 @@
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.buttonObrisi = new System.Windows.Forms.Button();
             this.buttonAzuriraj = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPopis)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,6 +148,11 @@
             this.buttonAzuriraj.UseVisualStyleBackColor = true;
             this.buttonAzuriraj.Click += new System.EventHandler(this.buttonAzuriraj_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // PopisPicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +170,9 @@
             this.Controls.Add(this.buttonPDF);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewPopis);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "PopisPicaForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "PopisPicaForm";
             this.Load += new System.EventHandler(this.PopisPicaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPopis)).EndInit();
@@ -186,5 +194,6 @@
         private System.Windows.Forms.Button buttonDodaj;
         private System.Windows.Forms.Button buttonObrisi;
         private System.Windows.Forms.Button buttonAzuriraj;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

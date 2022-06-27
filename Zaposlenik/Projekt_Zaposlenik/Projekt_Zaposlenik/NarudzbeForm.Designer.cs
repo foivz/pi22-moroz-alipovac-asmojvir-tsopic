@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvNarudzbe = new System.Windows.Forms.DataGridView();
             this.buttonPosluzi = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNarudzbe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,11 @@
             this.buttonPosluzi.UseVisualStyleBackColor = true;
             this.buttonPosluzi.Click += new System.EventHandler(this.buttonPosluzi_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // NarudzbeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -70,7 +76,9 @@
             this.Controls.Add(this.buttonPosluzi);
             this.Controls.Add(this.dgvNarudzbe);
             this.Controls.Add(this.label1);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "NarudzbeForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "NarudzbeForm";
             this.Load += new System.EventHandler(this.NarudzbeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNarudzbe)).EndInit();
@@ -84,5 +92,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvNarudzbe;
         private System.Windows.Forms.Button buttonPosluzi;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

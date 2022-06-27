@@ -36,6 +36,7 @@
             this.buttonProfili = new System.Windows.Forms.Button();
             this.buttonRaspored = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // buttonNarudzbe
@@ -118,6 +119,11 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Glavni Izbornik";
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
+    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            // 
             // GlavniIzbornikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,7 +138,9 @@
             this.Controls.Add(this.buttonPopisPica);
             this.Controls.Add(this.buttonRezervacije);
             this.Controls.Add(this.buttonNarudzbe);
+            this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
             this.Name = "GlavniIzbornikForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "GlavniIzbornikForm";
             this.Load += new System.EventHandler(this.GlavniIzbornikForm_Load);
             this.ResumeLayout(false);
@@ -150,5 +158,6 @@
         private System.Windows.Forms.Button buttonProfili;
         private System.Windows.Forms.Button buttonRaspored;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
