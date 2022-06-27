@@ -16,11 +16,6 @@ namespace Projekt_Zaposlenik
         {
             InitializeComponent();
         }
-
-        private void DodajPiceForm_Load(object sender, EventArgs e)
-        {
-            Fill_Vrste_artikla();
-        }
         private void Fill_Vrste_artikla()
         {
             using (var context = new PI2220_DBEntities())
@@ -29,6 +24,11 @@ namespace Projekt_Zaposlenik
                             select va;
                 comboBoxVrsta.DataSource = query.ToList();
             }
+        }
+
+        private void DodajPiceForm_Load(object sender, EventArgs e)
+        {
+            Fill_Vrste_artikla();
         }
 
         private void Dodavanje()
