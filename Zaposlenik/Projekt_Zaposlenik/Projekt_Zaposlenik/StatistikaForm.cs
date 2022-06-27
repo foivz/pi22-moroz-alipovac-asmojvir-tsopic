@@ -71,10 +71,15 @@ namespace Projekt_Zaposlenik
             FillComboBox();
         }
 
-        private void buttonOdaberi_Click(object sender, EventArgs e)
+        private void Odaberi()
         {
             int brojMjeseca = comboBox1.SelectedIndex + 1;
             RefreshGUIvol2(brojMjeseca);
+        }
+
+        private void buttonOdaberi_Click(object sender, EventArgs e)
+        {
+            Odaberi();
         }
     }
 }
