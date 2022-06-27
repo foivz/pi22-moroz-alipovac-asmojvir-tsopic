@@ -43,25 +43,29 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(336, 43);
+            this.label1.Location = new System.Drawing.Point(448, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 29);
+            this.label1.Size = new System.Drawing.Size(167, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Zaposlenici";
             // 
             // dgvZaposlenici
             // 
             this.dgvZaposlenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvZaposlenici.Location = new System.Drawing.Point(12, 98);
+            this.dgvZaposlenici.Location = new System.Drawing.Point(16, 121);
+            this.dgvZaposlenici.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvZaposlenici.Name = "dgvZaposlenici";
-            this.dgvZaposlenici.Size = new System.Drawing.Size(776, 236);
+            this.dgvZaposlenici.RowHeadersWidth = 51;
+            this.dgvZaposlenici.Size = new System.Drawing.Size(1035, 290);
             this.dgvZaposlenici.TabIndex = 1;
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(656, 358);
+            this.btnObrisi.Location = new System.Drawing.Point(875, 441);
+            this.btnObrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(132, 41);
+            this.btnObrisi.Size = new System.Drawing.Size(176, 50);
             this.btnObrisi.TabIndex = 2;
             this.btnObrisi.Text = "OBRIŠI ZAPOSLENIKA";
             this.btnObrisi.UseVisualStyleBackColor = true;
@@ -69,9 +73,10 @@
             // 
             // btnAzuriraj
             // 
-            this.btnAzuriraj.Location = new System.Drawing.Point(341, 358);
+            this.btnAzuriraj.Location = new System.Drawing.Point(455, 441);
+            this.btnAzuriraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAzuriraj.Name = "btnAzuriraj";
-            this.btnAzuriraj.Size = new System.Drawing.Size(137, 41);
+            this.btnAzuriraj.Size = new System.Drawing.Size(183, 50);
             this.btnAzuriraj.TabIndex = 3;
             this.btnAzuriraj.Text = "AŽURIRAJ PODATKE";
             this.btnAzuriraj.UseVisualStyleBackColor = true;
@@ -79,9 +84,10 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(12, 358);
+            this.btnDodaj.Location = new System.Drawing.Point(16, 441);
+            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(137, 41);
+            this.btnDodaj.Size = new System.Drawing.Size(183, 50);
             this.btnDodaj.TabIndex = 4;
             this.btnDodaj.Text = "DODAJ ZAPOSLENIKA";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -89,9 +95,10 @@
             // 
             // btnIzvjestaj
             // 
-            this.btnIzvjestaj.Location = new System.Drawing.Point(616, 62);
+            this.btnIzvjestaj.Location = new System.Drawing.Point(821, 76);
+            this.btnIzvjestaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIzvjestaj.Name = "btnIzvjestaj";
-            this.btnIzvjestaj.Size = new System.Drawing.Size(172, 30);
+            this.btnIzvjestaj.Size = new System.Drawing.Size(229, 37);
             this.btnIzvjestaj.TabIndex = 6;
             this.btnIzvjestaj.Text = "Izvještaj svih zaposlenika";
             this.btnIzvjestaj.UseVisualStyleBackColor = true;
@@ -99,15 +106,15 @@
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
-    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Relaxic\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Proj" +
+    "ekt_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
             // 
             // ZaposleniciForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 439);
+            this.ClientSize = new System.Drawing.Size(1067, 540);
             this.Controls.Add(this.btnIzvjestaj);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnAzuriraj);
@@ -115,6 +122,7 @@
             this.Controls.Add(this.dgvZaposlenici);
             this.Controls.Add(this.label1);
             this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ZaposleniciForm";
             this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Zaposlenici";

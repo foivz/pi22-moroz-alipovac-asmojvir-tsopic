@@ -41,41 +41,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 36);
+            this.label1.Location = new System.Drawing.Point(16, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(97, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Korisničko ime:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 66);
+            this.label2.Location = new System.Drawing.Point(16, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Lozinka:";
             // 
             // textBoxKorisnickoIme
             // 
-            this.textBoxKorisnickoIme.Location = new System.Drawing.Point(96, 36);
+            this.textBoxKorisnickoIme.Location = new System.Drawing.Point(128, 44);
+            this.textBoxKorisnickoIme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxKorisnickoIme.Name = "textBoxKorisnickoIme";
-            this.textBoxKorisnickoIme.Size = new System.Drawing.Size(137, 20);
+            this.textBoxKorisnickoIme.Size = new System.Drawing.Size(181, 22);
             this.textBoxKorisnickoIme.TabIndex = 3;
             // 
             // textBoxLozinka
             // 
-            this.textBoxLozinka.Location = new System.Drawing.Point(96, 66);
+            this.textBoxLozinka.Location = new System.Drawing.Point(128, 81);
+            this.textBoxLozinka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxLozinka.Name = "textBoxLozinka";
             this.textBoxLozinka.PasswordChar = '*';
-            this.textBoxLozinka.Size = new System.Drawing.Size(137, 20);
+            this.textBoxLozinka.Size = new System.Drawing.Size(181, 22);
             this.textBoxLozinka.TabIndex = 4;
             // 
             // buttonLogIn
             // 
-            this.buttonLogIn.Location = new System.Drawing.Point(109, 113);
+            this.buttonLogIn.Location = new System.Drawing.Point(145, 139);
+            this.buttonLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogIn.Name = "buttonLogIn";
-            this.buttonLogIn.Size = new System.Drawing.Size(124, 44);
+            this.buttonLogIn.Size = new System.Drawing.Size(165, 54);
             this.buttonLogIn.TabIndex = 5;
             this.buttonLogIn.Text = "Log In";
             this.buttonLogIn.UseVisualStyleBackColor = true;
@@ -84,24 +89,25 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Projekt_Zaposlenik.Properties.Resources.Free_Sample_By_Wix;
-            this.pictureBox1.Location = new System.Drawing.Point(259, 36);
+            this.pictureBox1.Location = new System.Drawing.Point(345, 44);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(195, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "C:\\Users\\Antun\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Projek" +
-    "t_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Relaxic\\Desktop\\mapa\\pi22-moroz-alipovac-asmojvir-tsopic\\Zaposlenik\\Proj" +
+    "ekt_Zaposlenik\\Projekt_Zaposlenik\\Resources\\helpMe.chm";
             // 
             // LogInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(429, 178);
+            this.ClientSize = new System.Drawing.Size(572, 219);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonLogIn);
             this.Controls.Add(this.textBoxLozinka);
@@ -109,6 +115,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.helpProvider1.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.Topic);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LogInForm";
             this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Login";
