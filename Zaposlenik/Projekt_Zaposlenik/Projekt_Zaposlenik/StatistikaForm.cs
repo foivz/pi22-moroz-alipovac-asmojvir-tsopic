@@ -16,18 +16,17 @@ namespace Projekt_Zaposlenik
         {
             InitializeComponent();
         }
-
-        private void StatistikaForm_Load(object sender, EventArgs e)
-        {
-            RefreshGUI();
-            FillComboBox();
-        }
-
         private void FillComboBox()
         {
             List<string> strings = new List<string>() { "Siječanj", "Veljača", "Ožujak", "Travanj", "Svibanj", "Lipanj", "Srpanj", "Kolovoz", "Rujan", "Listopad", "Studeni", "Prosinac" };
             comboBox1.DataSource = strings;
             comboBox1.SelectedIndex = DateTime.Now.Month - 1;
+        }
+
+        private void StatistikaForm_Load(object sender, EventArgs e)
+        {
+            RefreshGUI();
+            FillComboBox();
         }
 
         private async void RefreshGUI()
