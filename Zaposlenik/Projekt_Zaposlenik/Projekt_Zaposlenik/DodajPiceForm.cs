@@ -31,7 +31,7 @@ namespace Projekt_Zaposlenik
             }
         }
 
-        private void buttonDodaj_Click(object sender, EventArgs e)
+        private void Dodavanje()
         {
             using (var context = new PI2220_DBEntities())
             {
@@ -101,6 +101,11 @@ namespace Projekt_Zaposlenik
                     MessageBox.Show("Unijeli ste neispravne podatke!");
                 }   
             }
+        }
+
+        private void buttonDodaj_Click(object sender, EventArgs e)
+        {
+            Dodavanje();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
