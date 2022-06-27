@@ -197,6 +197,12 @@ namespace Projekt_Zaposlenik
             Azuriranje();
         }
 
+        private void buttonPDF_Click(object sender, EventArgs e)
+        {
+            dataGridViewPopis.Columns.Remove("stavka_narudzbe");
+            ExportToPDF(dataGridViewPopis, "Cjenik");
+        }
+
         public void ExportToPDF(DataGridView dgw, string fileName)
         {
             BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
@@ -225,11 +231,11 @@ namespace Projekt_Zaposlenik
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.FileName = fileName;
             saveFileDialog.DefaultExt = ".pdf";
-            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
                 {
-                    Document pdfDoc = new Document(PageSize.A4,10f,10f,10f,0f);
+                    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
                     PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
                     pdfDoc.Add(pdfTable);
@@ -239,11 +245,6 @@ namespace Projekt_Zaposlenik
             }
         }
 
-        private void buttonPDF_Click(object sender, EventArgs e)
-        {
-            dataGridViewPopis.Columns.Remove("stavka_narudzbe");
-            ExportToPDF(dataGridViewPopis, "Cjenik");
-        }
         public List<Artikl> DohvatiPica()
         {
             using (var context = new PI2220_DBEntities())
