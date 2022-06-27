@@ -68,7 +68,7 @@ namespace Projekt_Zaposlenik
             }
         }
 
-        private void buttonFiltriraj_Click(object sender, EventArgs e)
+        private void Filtriranje()
         {
             string naziv = comboBoxVrsteArtikla.Text;
             if (naziv != "")
@@ -110,6 +110,11 @@ namespace Projekt_Zaposlenik
                     dataGridViewPopis.DataSource = query.ToList();
                 }
             }
+        }
+
+        private void buttonFiltriraj_Click(object sender, EventArgs e)
+        {
+            Filtriranje();
         }
 
         private void textBoxPretraga_TextChanged(object sender, EventArgs e)
