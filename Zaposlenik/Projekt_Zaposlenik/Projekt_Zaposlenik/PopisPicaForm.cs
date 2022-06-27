@@ -47,7 +47,6 @@ namespace Projekt_Zaposlenik
                 var query = from va in context.Vrsta_artiklas
                             select va;
                 comboBoxVrsteArtikla.DataSource = query.ToList();
-
             }
         }
 
