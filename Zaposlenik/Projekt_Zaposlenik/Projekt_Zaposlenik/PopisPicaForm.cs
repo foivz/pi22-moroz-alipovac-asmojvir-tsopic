@@ -144,8 +144,7 @@ namespace Projekt_Zaposlenik
             Pretraga();
         }
 
-        private void buttonObrisi_Click(object sender, EventArgs e)
-        {
+        private void Brisanje() { 
             DialogResult dr = MessageBox.Show("Jeste li sigurni da želite obrisati odabrani artikl?", "Upozorenje", MessageBoxButtons.YesNoCancel,
             MessageBoxIcon.Information);
 
@@ -166,7 +165,11 @@ namespace Projekt_Zaposlenik
                 }
                 RefreshGUI();
             }
+        }
 
+        private void buttonObrisi_Click(object sender, EventArgs e)
+        {
+            Brisanje();
         }
 
         private void buttonDodaj_Click(object sender, EventArgs e)
