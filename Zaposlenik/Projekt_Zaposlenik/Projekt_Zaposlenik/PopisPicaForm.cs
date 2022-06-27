@@ -117,7 +117,7 @@ namespace Projekt_Zaposlenik
             Filtriranje();
         }
 
-        private void textBoxPretraga_TextChanged(object sender, EventArgs e)
+        private void Pretraga()
         {
             string naziv = textBoxPretraga.Text;
             string vrsta = comboBoxVrsteArtikla.Text;
@@ -137,6 +137,11 @@ namespace Projekt_Zaposlenik
 
                 dataGridViewPopis.DataSource = query.ToList();
             }
+        }
+
+        private void textBoxPretraga_TextChanged(object sender, EventArgs e)
+        {
+            Pretraga();
         }
 
         private void buttonObrisi_Click(object sender, EventArgs e)
