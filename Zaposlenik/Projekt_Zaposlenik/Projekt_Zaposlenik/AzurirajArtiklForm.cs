@@ -42,16 +42,66 @@ namespace Projekt_Zaposlenik
         {
             using (var context = new PI2220_DBEntities())
             {
+                bool ispravno = true;
+                string artikl;
+                if (textBoxArtikl.Text != "")
+                    artikl = textBoxArtikl.Text;
+                else artikl = null;
+                if (artikl == null) ispravno = false;
+                double kolicinaL;
+                bool isDouble = Double.TryParse(textBoxKolicina.Text, out kolicinaL);
+                if (isDouble)
+                {
+                    kolicinaL = double.Parse(textBoxKolicina.Text);
+                    if (kolicinaL <= 0)
+                        ispravno = false;
+                }
+                else
+                {
+                    ispravno = false;
+                }
+                int kolicinaSkladiste;
+                bool isInt = Int32.TryParse(textBoxSkladiste.Text, out kolicinaSkladiste);
+                if (isInt)
+                {
+                    kolicinaSkladiste = Int32.Parse(textBoxSkladiste.Text);
+                    if (kolicinaSkladiste <= 0)
+                        ispravno = false;
+                }
+                else
+                {
+                    ispravno = false;
+                }
                 Vrsta_artikla vrsta = comboBoxVrsta.SelectedItem as Vrsta_artikla;
-                var item = context.Artikls.SingleOrDefault(i => i.id_artikl == odabraniArtikl.ArtiklId);
-                item.naziv_artikla = textBoxArtikl.Text;
-                item.kolicina_u_litrama = double.Parse(textBoxKolicina.Text);
-                item.kolicina_u_skladistu = int.Parse(textBoxSkladiste.Text);
-                item.id_vrste_artikla = vrsta.id_vrste_artikla;
-                item.cijena = double.Parse(textBoxCijena.Text);
-                context.SaveChanges();
+                double cijena;
+                bool isDouble2 = Double.TryParse(textBoxCijena.Text, out cijena);
+                if (isDouble2)
+                {
+                    cijena = double.Parse(textBoxCijena.Text);
+                    if (cijena < 0)
+                        ispravno = false;
+                }
+                else
+                {
+                    ispravno = false;
+                }
+                if (ispravno)
+                {
+                    var item = context.Artikls.SingleOrDefault(i => i.id_artikl == odabraniArtikl.ArtiklId);
+                    item.naziv_artikla = artikl;
+                    item.kolicina_u_litrama = kolicinaL;
+                    item.kolicina_u_skladistu = kolicinaSkladiste;
+                    item.id_vrste_artikla = vrsta.id_vrste_artikla;
+                    item.cijena = cijena;
+                    context.SaveChanges();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Unijeli ste neispravne podatke!");
+                }
+                
             }
-            Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
