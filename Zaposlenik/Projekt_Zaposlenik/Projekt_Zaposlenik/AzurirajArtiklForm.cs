@@ -38,7 +38,7 @@ namespace Projekt_Zaposlenik
             comboBoxVrsta.Text = odabraniArtikl.vrsta;
         }
 
-        private void buttonAzuriraj_Click(object sender, EventArgs e)
+        private void Azuriranje()
         {
             using (var context = new PI2220_DBEntities())
             {
@@ -102,6 +102,11 @@ namespace Projekt_Zaposlenik
                 }
                 
             }
+        }
+
+        private void buttonAzuriraj_Click(object sender, EventArgs e)
+        {
+            Azuriranje();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
