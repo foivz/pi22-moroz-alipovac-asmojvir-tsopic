@@ -172,19 +172,29 @@ namespace Projekt_Zaposlenik
             Brisanje();
         }
 
-        private void buttonDodaj_Click(object sender, EventArgs e)
+        private void Dodavanje()
         {
             DodajPiceForm form = new DodajPiceForm();
             form.ShowDialog();
             RefreshGUI();
         }
 
-        private void buttonAzuriraj_Click(object sender, EventArgs e)
+        private void buttonDodaj_Click(object sender, EventArgs e)
+        {
+            Dodavanje();
+        }
+
+        private void Azuriranje()
         {
             ArtiklView artikl = dataGridViewPopis.CurrentRow.DataBoundItem as ArtiklView;
             AzurirajArtiklForm form = new AzurirajArtiklForm(artikl);
             form.ShowDialog();
             RefreshGUI();
+        }
+
+        private void buttonAzuriraj_Click(object sender, EventArgs e)
+        {
+            Azuriranje();
         }
 
         public void ExportToPDF(DataGridView dgw, string fileName)
