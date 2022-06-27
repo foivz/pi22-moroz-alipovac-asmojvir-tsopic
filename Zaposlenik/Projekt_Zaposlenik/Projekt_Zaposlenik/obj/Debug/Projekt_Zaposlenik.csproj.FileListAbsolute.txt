@@ -246,3 +246,7 @@ C:\Users\Relaxic\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Pro
 C:\Users\Relaxic\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.csproj.CopyComplete
 C:\Users\Relaxic\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.exe
 C:\Users\Relaxic\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.pdb
+C:\Users\Relaxic\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\bin\Debug\Projekt_Zaposlenik.exe.manifest
+C:\Users\Relaxic\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\bin\Debug\Projekt_Zaposlenik.application
+C:\Users\Relaxic\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.exe.manifest
+C:\Users\Relaxic\Desktop\mapa\pi22-moroz-alipovac-asmojvir-tsopic\Zaposlenik\Projekt_Zaposlenik\Projekt_Zaposlenik\obj\Debug\Projekt_Zaposlenik.application
