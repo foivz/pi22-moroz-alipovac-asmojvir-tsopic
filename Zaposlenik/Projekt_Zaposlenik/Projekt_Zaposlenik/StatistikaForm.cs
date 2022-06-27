@@ -43,13 +43,6 @@ namespace Projekt_Zaposlenik
                 textBoxPromet.Text = promet.ToString() + " KN";
             }
         }
-
-        private void StatistikaForm_Load(object sender, EventArgs e)
-        {
-            RefreshGUI();
-            FillComboBox();
-        }
-
         private async void RefreshGUIvol2(int index)
         {
             using (var context = new PI2220_DBEntities())
@@ -70,6 +63,12 @@ namespace Projekt_Zaposlenik
                 }
                 textBoxPromet.Text = promet.ToString() + " KN";
             }
+        }
+
+        private void StatistikaForm_Load(object sender, EventArgs e)
+        {
+            RefreshGUI();
+            FillComboBox();
         }
 
         private void buttonOdaberi_Click(object sender, EventArgs e)
