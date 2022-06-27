@@ -13,12 +13,6 @@ namespace Projekt_Zaposlenik
     public partial class AzurirajArtiklForm : Form
     {
         public ArtiklView odabraniArtikl;
-        public AzurirajArtiklForm(ArtiklView artikl)
-        {
-            InitializeComponent();
-            Fill_Vrste_artikla();
-            odabraniArtikl = artikl;
-        }
         private void Fill_Vrste_artikla()
         {
             using (var context = new PI2220_DBEntities())
@@ -27,6 +21,12 @@ namespace Projekt_Zaposlenik
                             select va;
                 comboBoxVrsta.DataSource = query.ToList();
             }
+        }
+        public AzurirajArtiklForm(ArtiklView artikl)
+        {
+            InitializeComponent();
+            Fill_Vrste_artikla();
+            odabraniArtikl = artikl;
         }
 
         private void AzurirajArtiklForm_Load(object sender, EventArgs e)
