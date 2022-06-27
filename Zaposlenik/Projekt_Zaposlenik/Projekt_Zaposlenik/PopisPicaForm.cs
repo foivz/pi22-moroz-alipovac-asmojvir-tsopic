@@ -202,6 +202,13 @@ namespace Projekt_Zaposlenik
             dataGridViewPopis.Columns.Remove("stavka_narudzbe");
             ExportToPDF(dataGridViewPopis, "Cjenik");
         }
+        public List<Artikl> DohvatiPica()
+        {
+            using (var context = new PI2220_DBEntities())
+            {
+                return context.Artikls.ToList();
+            }
+        }
 
         public void ExportToPDF(DataGridView dgw, string fileName)
         {
@@ -242,14 +249,6 @@ namespace Projekt_Zaposlenik
                     pdfDoc.Close();
                     stream.Close();
                 }
-            }
-        }
-
-        public List<Artikl> DohvatiPica()
-        {
-            using (var context = new PI2220_DBEntities())
-            {
-                return context.Artikls.ToList();
             }
         }
     }
